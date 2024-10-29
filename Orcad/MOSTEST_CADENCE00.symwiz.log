@@ -1,0 +1,7 @@
+STATUS: PSpice Model Import Wizard for "Capture" (22.1.0.d001)
+STATUS:  
+   INFO: OLB driven flow
+   INFO: Input File: C:\USERS\A1201-ADMIN\DOCUMENTS\EXJOBB\ORCAD\MOSTEST_CADENCE00.olb
+   INFO: Symbol Name: LMG1210RVRT_0
+  ERROR: Symbol "LMG1210RVRT_0" not found in symbol library "C:\USERS\A1201-ADMIN\DOCUMENTS\EXJOBB\ORCAD\MOSTEST_CADENCE00.olb".
+STATUS: 1 Error messages, 0 Warning messages

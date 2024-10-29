@@ -1,0 +1,105 @@
+
+**** 10/04/24 12:24:59 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter_Test"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter Test-PSpiceFiles\SCHEMATIC1\Filter_Test.s
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Filter_Test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2us 0 
+.OPTIONS ADVCONV
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FILTER TEST
+R_R3         0 N34304  0.5 TC=0,0 
+R_R2         0 N34366  0.5 TC=0,0 
+R_R1         0 N34436  0.5 TC=0,0 
+R_R4         0 N34554  0.5 TC=0,0 
+L_L3         N34300 N34304  20n  
+L_L1         N34300 N34436  80n  
+L_L2         N34300 N34366  40n  
+L_L4         N34300 N34554  160n  
+V_V1         N34300 0  
++PULSE 0 30 0.5n 0.5n 0.5n 40n 80n
+
+**** RESUMING Filter_Test.cir ****
+.END
+
+**** 10/04/24 12:24:59 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter_Test"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter Test-PSpiceFiles\SCHEMATIC1\Filter_Test.s
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N34300)    0.0000 (N34304)    0.0000 (N34366)    0.0000 (N34436)    0.0000     
+
+(N34554)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 150
+ ITL2 = 20
+ ITL4 = 10
+ RELTOL = 0.001
+ ABSTOL = 1e-12
+ VNTOL = 1e-06
+ PIVTOL = 1e-13
+
+**** 10/04/24 12:24:59 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter_Test"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter Test-PSpiceFiles\SCHEMATIC1\Filter_Test.s
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       92.63
+  Total job time (using Solver 1)   =         .03
+

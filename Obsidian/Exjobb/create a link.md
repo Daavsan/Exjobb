@@ -1,0 +1,1 @@
+[[Ultra-High-Bandwidth_Power_Amplifiers_A_Technology_Overview_and_Future_Prospects.pdf#page=5&selection=30,7,38,39|Ultra-High-Bandwidth_Power_Amplifiers_A_Technology_Overview_and_Future_Prospects, page 5]]

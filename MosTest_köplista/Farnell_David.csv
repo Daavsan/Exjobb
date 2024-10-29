@@ -1,0 +1,10 @@
+Radnummer,Beställningskod,RoHS-kompatibelt?,Dittt artikelnummer,Kommentarer,Antal,Tillverkarens artikelnummer,Tillverkarens namn,Tillverkare / Beskrivning,Tillgänglighet,Enhetspris (kr),Radpris (kr),Rabattpris (kr)
+1,3928887,RoHS: YES / FTALATER: YES,,,10.0,"IHLP1212ABEVR10M01",VISHAY,"VISHAY  POWER INDUCTOR, 0.1UH, SHIELDED, 10.48A",3960,8.3600,83.60,,
+2,3368112,RoHS: YES / FTALATER: YES,,,5.0,"SMMBD770T1G",ONSEMI,"ONSEMI  SCHOTTKY RECTIFIER, 70V, 0.2A, SOT-323",1846,2.5000,12.50,,
+3,2985308,RoHS: YES / FTALATER: YES,,,2.0,"MRF101AN",NXP,"NXP  RF FET TRANSISTOR, 133V, 182W, TO-220",466,283.1800,566.36,,
+
+,,,,,,,Delsumma,kr662.46
+,,,,,,,Totalsumma varor,kr662.46
+,,,,,,,Leverans,kr175.00
+,,,,,,,Moms,kr209.37
+,,,,,,,Totalsumma,kr1046.83
