@@ -1,0 +1,22 @@
+tdt05ns=load('100nsGates.wfm.csv');
+tdt3ns=load('100nsGates3nstdt.wfm.csv');
+
+dt05 = "100nsGates";
+dt3 = "100nsGates3nstdt";
+x1diode="200nsNoisydioseDropVS-1xdiode";
+x2diode="200nsNoisydioseDropVS-2xdiode";
+linethickness = 2; % Line thickness option
+textscale = 1.5; % Text and legend scale option
+
+
+timeUnit = "ns";
+
+    tiledlayout(3, 2);
+OscilloscopePlotter(dt05,timeUnit,"0.5ns Deadtime", linethickness, textscale)
+legend('High Gate','Low Gate');
+OscilloscopePlotter(dt3,timeUnit,"3ns Deadtime", linethickness, textscale)
+legend('High Gate','Low Gate');
+OscilloscopePlotter(x1diode,timeUnit,"1 Diode")
+legend('Diode Voltage drop', 'VS')
+OscilloscopePlotter(x2diode,timeUnit)
+legend('Diode Voltage drop', 'VS')
