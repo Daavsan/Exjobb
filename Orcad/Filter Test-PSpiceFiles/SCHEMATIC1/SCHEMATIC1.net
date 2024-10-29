@@ -1,0 +1,5 @@
+* source FILTER TEST
+L_L1         N30582 N30440  160n  
+R_R1         0 N30440  0.5 TC=0,0 
+V_V1         N30582 0  
++PULSE 0 6 0.5n 0n 0.5n 15n 40n

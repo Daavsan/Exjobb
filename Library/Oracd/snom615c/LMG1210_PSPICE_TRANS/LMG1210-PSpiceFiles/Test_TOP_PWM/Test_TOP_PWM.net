@@ -1,0 +1,50 @@
+* source LMG1210
+R_R5         0 N16779555  {Rdt}  
+R_R6         0 N16779560  {Rdt}  
+V_V2         N16779951 0  
++PULSE 0 5 0 0.5n 0.5n 0.25u 0.5u
+V_V11         N16779960 0  
++PWL 0 0 50u 5 
+V_V3         N16780078 0  
++PULSE 5 5 0 1n 1n 0.15u 0.5u
+X_U5         HB HO PWM_LI HS HS HS HS 0 0 VDD LO N16779560 N16779555 VDD 0 0
++  VDD 0 0 0 BST LMG1210
+X_U4         BST HB D_D1
+C_C2         VDD 0  50u  
+C_C5         0 N16787627  1u  
+L_L1         HS VOUT  4.7u  
+C_C3         0 VOUT  1.44u  
+R_R1         0 VOUT  10  
+X_U3         0 HS D_D1
+C_C6         0 N16787627  0.022u  
+X_U2         HS N16787627 D_D1
+C_C7         0 N16787627  0.022u  
+C_C1         HB HS  10u  
+V_V10         N16787627 0 80
+L_L2         N16788727 VOUT_IDEAL  4.7u  
+C_C4         0 VOUT_IDEAL  1.44u  
+R_R2         0 VOUT_IDEAL  10  
+V_V4         N16788727 0  
++PULSE 0 80 10.520u 1n 1n 0.5u 1u
+R_R7         0 N16780078  1T  
+V_V1         PWM_LI 0  
++PULSE 0 6 0 1n 1n 80n 200n
+R_R8         0 N16779951  1T  
+X_S4    N16791706 N16791706 N16791706 N16791706 Test_TOP_PWM_S4 
+X_S3    N16791706 N16791706 N16791706 N16791706 Test_TOP_PWM_S3 
+R_R9         0 N16791706  1T  
+R_R10         0 N16779960  1k  
+V_V12         VDD 0 5
+.PARAM  rdt=1.8m
+
+.subckt Test_TOP_PWM_S4 1 2 3 4  
+S_S4         3 4 1 2 _S4
+RS_S4         1 2 1G
+.MODEL         _S4 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S4
+
+.subckt Test_TOP_PWM_S3 1 2 3 4  
+S_S3         3 4 1 2 _S3
+RS_S3         1 2 1G
+.MODEL         _S3 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S3

@@ -1,0 +1,173 @@
+
+**** 10/14/24 16:39:43 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Trans"  [ c:\users\a1201-admin\documents\exjobb\orcad\mostest_cadence-PSpiceFiles\SCHEMATIC1\Trans.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ns 0 1n 
+.OPTIONS ADVCONV
+.OPTIONS PSEUDOTRAN
+.OPTIONS TRANCONV
+.OPTIONS ABSTOL= 100u
+.OPTIONS VNTOL= 10u
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MOSTEST_CADENCE
+C_C1         0 VCC-200  1u  TC=0,0 
+R_R1         0 N16736  0.5 TC=0,0 
+V_V1         N20055 0  
++PULSE 0 6 0.5n 0n 0.5n 15n 40n
+V_V2         VCC-200 0 20
+V_V3         VCC-10 0 10
+C_C2         HS HB  {C_f}  TC=0,0 
+C_C3         0 VCC-5  {C_f*5}  TC=0,0 
+R_R2         0 N22644  {Rdt} TC=0,0 
+R_R3         0 N22362  {Rdt} TC=0,0 
+X_U5         HB HO N20055 HS HS HS HS 0 0 VCC-10 LO N22362 N22644 VCC 0 0 VCC 0
++  0 0 BST LMG1210
+L_L1         HS N16736  80n  
+X_U4         BST HB D_D1
+C_C4         VCC-10 0  1u  TC=0,0 
+V_V4         VCC-5 0 4
+X_M1         VCC-200 HO HS POWER_NMOS_P PARAMS: BVDSS=500.0 IDSS=1U VGS_TH=2.2
++  RDSON=0.0059 GFS=7.1 CISS=149P COSS=46.4P CRSS=0.96P RG=1.8 VSD=0.45 QG=17.2N
++  V_QG=10 TRR=50N
+X_M2         HS LO 0 POWER_NMOS_P PARAMS: BVDSS=500.0 IDSS=1U VGS_TH=2.2
++  RDSON=0.0059 GFS=7.1 CISS=149P COSS=46.4P CRSS=0.96P RG=1.8 VSD=0.45 QG=17.2N
++  V_QG=10 TRR=50N
+.PARAM  dt=2mn rdt={900/dt-25} c_f=1u
+
+**** RESUMING Trans.cir ****
+.END
+
+**** 10/14/24 16:39:43 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Trans"  [ c:\users\a1201-admin\documents\exjobb\orcad\mostest_cadence-PSpiceFiles\SCHEMATIC1\Trans.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.N_MOSFET.DBT 
+          IS    1.000000E-06 
+           N    1.514981     
+          BV  500            
+          TT   50.000000E-09 
+         CJO  100.000000E-15 
+           M     .35         
+
+
+               X_M2.N_MOSFET.DBT 
+          IS    1.000000E-06 
+           N    1.514981     
+          BV  500            
+          TT   50.000000E-09 
+         CJO  100.000000E-15 
+           M     .35         
+
+
+**** 10/14/24 16:39:43 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Trans"  [ c:\users\a1201-admin\documents\exjobb\orcad\mostest_cadence-PSpiceFiles\SCHEMATIC1\Trans.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.N_MOSFET   X_M2.N_MOSFET   
+               NMOS            NMOS            
+       LEVEL    1               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    2.7             2.7          
+          KP   14.2            14.2          
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 10/14/24 16:39:43 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Trans"  [ c:\users\a1201-admin\documents\exjobb\orcad\mostest_cadence-PSpiceFiles\SCHEMATIC1\Trans.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.S_GATE_CHG_SW 
+         RON     .01         
+        ROFF  100.000000E+06 
+         VON    3.3          
+        VOFF    2.2          
+
+
+               X_M2.S_GATE_CHG_SW 
+         RON     .01         
+        ROFF  100.000000E+06 
+         VON    3.3          
+        VOFF    2.2          
+
+
+WARNING(ORPSIM-15459): In device V_V1, default values (TR=1.00e-09) are used for zero TR and TF. Use the DEFTR and DEFTF options to control these defaults. To disable default value usage for zero TR and TF, specify the DISABLE_DEFAULT_PULSE_PARAMS option.
+
+ERROR(ORPSIM-15006): AutoConverge Max value for ABSTOL less than the value specified by option.
+

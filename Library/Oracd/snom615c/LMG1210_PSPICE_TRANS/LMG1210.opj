@@ -1,0 +1,63 @@
+(ExpressProject "LMG1210"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "22.1 P001 (4063652)  [10/6/2022]-[10/01/24]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\LMG1210\RELEASE2_TI\PSPICE\LMG1210_PSPICE_TRANS\LMG1210_PSPICE_TRANS\LMG1210RVR_TRANS.OLB"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\lmg1210.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\lmg1210-pspicefiles\test_top_pwm\test_top_pwm.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\lmg1210-pspicefiles\test_top_pwm\tr.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmg1210-pspicefiles\test_top_pwm\tr.sim"
+        (DisplayName "Test_TOP_PWM-TR")
+        (Type "PSpice Profile")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Model Libraries"
+      (File ".\lmg1210.lib"
+        (DisplayName ".\lmg1210.lib")
+        (Type "PSpiceLibrary"))
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (LMG1210RVR_TRANS
+      (FullPartName "LMG1210RVR_TRANS.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\LMG1210\RELEASE_TI\PSPICE\LMG1210_PSPICE_TRANS\LMG1210RVR_TRANS.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 0 0 0 200 0 418"))
+      (Tab 0)))
+  (LastUsedLibraryBrowseDirectory
+     "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\Part_Numbers\LMG1210\Release_TI\PSPICE\LMG1210_PSPICE_TRANS")
+  (MPSSessionName "davkwi-9")
+  (Folder "Logs"))

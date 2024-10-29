@@ -1,0 +1,28 @@
+** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefiles\test_top_pwm\tr.sim ] 
+
+** Creating circuit file "TR.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lmg1210.lib" 
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.4u 0 10p 
+.OPTIONS STEPGMIN
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 10.0p
+.OPTIONS ITL1= 1000
+.OPTIONS ITL2= 400
+.OPTIONS ITL4= 400
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) 
+.INC "..\Test_TOP_PWM.net" 
+
+
+.END

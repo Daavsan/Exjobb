@@ -1,0 +1,41 @@
+
+**** 10/15/24 09:36:15 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FILTER TEST
+L_L1         N30582 N30440  160n  
+R_R1         0 N30440  0.5 TC=0,0 
+V_V1         N30582 0  
++PULSE 0 6 0.5n 0n 0.5n 15n 40n
+
+**** RESUMING bias.cir ****
+.END
+

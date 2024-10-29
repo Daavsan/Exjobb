@@ -1,0 +1,108 @@
+
+**** 10/02/24 10:46:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefil
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TR.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lmg1210.lib" 
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2u 0 10p 
+.OPTIONS STEPGMIN
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 10.0p
+.OPTIONS ITL1= 1000
+.OPTIONS ITL2= 400
+.OPTIONS ITL4= 400
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) 
+.INC "..\Test_TOP_PWM.net" 
+
+
+
+**** INCLUDING Test_TOP_PWM.net ****
+* source LMG1210
+R_R5         0 N16779555  {Rdt}  
+R_R6         0 N16779560  {Rdt}  
+V_V2         N16779938 0  
++PULSE 0 5 0 2n 2n 0.25u 0.5u
+V_V11         EN_HI 0  
++PWL 0 0 50u 5 
+V_V3         EN_HI 0  
++PULSE 5 5 0 1n 1n 0.15u 0.5u
+X_U5         HB HO PWM_LI HS HS HS HS 0 0 VDD LO N16779560 N16779555 VDD 0 0
++  VDD 0 0 0 BST LMG1210
+X_U4         BST HB D_D1
+C_C2         VDD 0  1u  
+C_C5         0 N16787627  1u  
+L_L1         HS VOUT  4.7u  
+C_C3         0 VOUT  1.44u  
+R_R1         0 VOUT  10  
+X_U3         0 HS D_D1
+C_C6         0 N16787627  0.022u  
+X_U2         HS N16787627 D_D1
+C_C7         0 N16787627  0.022u  
+C_C1         HB HS  .1u  
+V_V10         N16787627 0 80
+L_L2         N16788727 VOUT_IDEAL  4.7u  
+C_C4         0 VOUT_IDEAL  1.44u  
+R_R2         0 VOUT_IDEAL  10  
+V_V4         N16788727 0  
++PULSE 0 80 10.520u 1n 1n 0.5u 1u
+V_V1         PWM_LI 0  
++PULSE 6 -6 0 0.5n 0.5n 25n 50n
+X_M3         N16787627 HO HS POWER_NMOS_P PARAMS: BVDSS=500.0 IDSS=1U
++  VGS_TH=2.2 RDSON=0.0059 GFS=7.1 CISS=149P COSS=46.4P CRSS=0.96P RG=1.8
++  VSD=0.45 QG=17.2N V_QG=10 TRR=50N
+V_V12         VDD 0 10
+X_S4    N16792777 N16792791 N167927082 N167927083 Test_TOP_PWM_S4 
+X_S3    N167927082 N167927083 N16792777 N16792791 Test_TOP_PWM_S3 
+R_R7         0 N16779938  1T  
+R_R8         0 N16792791  1T  
+R_R9         0 N16792777  1T  
+X_M4         HS LO 0 POWER_NMOS_P PARAMS: BVDSS=500.0 IDSS=1U VGS_TH=2.2
++  RDSON=0.0059 GFS=7.1 CISS=149P COSS=46.4P CRSS=0.96P RG=1.8 VSD=0.45 QG=17.2N
++  V_QG=10 TRR=50N
+R_R10         0 EN_HI  1T  
+R_R11         0 EN_HI  1T  
+.PARAM  rdt=1.8m
+
+.subckt Test_TOP_PWM_S4 1 2 3 4  
+S_S4         3 4 1 2 _S4
+RS_S4         1 2 1G
+.MODEL         _S4 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S4
+
+.subckt Test_TOP_PWM_S3 1 2 3 4  
+S_S3         3 4 1 2 _S3
+RS_S3         1 2 1G
+.MODEL         _S3 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S3
+
+**** RESUMING TR.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N167927082 is floating
+
+ERROR(ORPSIM-15142): Node N167927083 is floating
+
+ERROR(ORPSIM-15143): Voltage source and/or inductor loop involving V_V3. You may break the loop by adding a series resistance
+

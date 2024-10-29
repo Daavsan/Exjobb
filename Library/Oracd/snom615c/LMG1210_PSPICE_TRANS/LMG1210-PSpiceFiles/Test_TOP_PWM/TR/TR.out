@@ -1,0 +1,1278 @@
+
+**** 10/02/24 14:30:21 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefil
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TR.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lmg1210.lib" 
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.4u 0 10p 
+.OPTIONS STEPGMIN
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 10.0p
+.OPTIONS ITL1= 1000
+.OPTIONS ITL2= 400
+.OPTIONS ITL4= 400
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) 
+.INC "..\Test_TOP_PWM.net" 
+
+
+
+**** INCLUDING Test_TOP_PWM.net ****
+* source LMG1210
+R_R5         0 N16779555  {Rdt}  
+R_R6         0 N16779560  {Rdt}  
+V_V2         N16779951 0  
++PULSE 0 5 0 0.5n 0.5n 0.25u 0.5u
+V_V11         N16779960 0  
++PWL 0 0 50u 5 
+V_V3         N16780078 0  
++PULSE 5 5 0 1n 1n 0.15u 0.5u
+X_U5         HB HO PWM_LI HS HS HS HS 0 0 VDD LO N16779560 N16779555 VDD 0 0
++  VDD 0 0 0 BST LMG1210
+X_U4         BST HB D_D1
+C_C2         VDD 0  50u  
+C_C5         0 N16787627  1u  
+L_L1         HS VOUT  4.7u  
+C_C3         0 VOUT  1.44u  
+R_R1         0 VOUT  10  
+X_U3         0 HS D_D1
+C_C6         0 N16787627  0.022u  
+X_U2         HS N16787627 D_D1
+C_C7         0 N16787627  0.022u  
+C_C1         HB HS  10u  
+V_V10         N16787627 0 80
+L_L2         N16788727 VOUT_IDEAL  4.7u  
+C_C4         0 VOUT_IDEAL  1.44u  
+R_R2         0 VOUT_IDEAL  10  
+V_V4         N16788727 0  
++PULSE 0 80 10.520u 1n 1n 0.5u 1u
+R_R7         0 N16780078  1T  
+V_V1         PWM_LI 0  
++PULSE 0 6 0 1n 1n 80n 200n
+R_R8         0 N16779951  1T  
+X_S4    N16791706 N16791706 N16791706 N16791706 Test_TOP_PWM_S4 
+X_S3    N16791706 N16791706 N16791706 N16791706 Test_TOP_PWM_S3 
+R_R9         0 N16791706  1T  
+R_R10         0 N16779960  1k  
+V_V12         VDD 0 5
+.PARAM  rdt=1.8m
+
+.subckt Test_TOP_PWM_S4 1 2 3 4  
+S_S4         3 4 1 2 _S4
+RS_S4         1 2 1G
+.MODEL         _S4 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S4
+
+.subckt Test_TOP_PWM_S3 1 2 3 4  
+S_S3         3 4 1 2 _S3
+RS_S3         1 2 1G
+.MODEL         _S3 VSWITCH Roff=1e8 Ron=7m Voff=2.4 Von=2.6
+.ends Test_TOP_PWM_S3
+
+**** RESUMING TR.cir ****
+.END
+
+**** 10/02/24 14:30:21 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefil
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_S4._S4        X_S3._S3        
+         RON    7.000000E-03    7.000000E-03 
+        ROFF  100.000000E+06  100.000000E+06 
+         VON    2.6             2.6          
+        VOFF    2.4             2.4          
+
+
+WARNING(ORPSIM-16534): Using high values of ITL4 for Speed Level > 0 may increase total simulation job time.
+
+**** 10/02/24 14:30:21 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefil
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   HB)    4.6482  (   HO) 848.9E-12  (   HS) 846.6E-12  (   LO) 46.67E-09      
+
+(  BST)    4.6668  (  VDD)    5.0000  ( VOUT) 846.6E-12  (PWM_LI)    0.0000     
+
+(X_U5.HS) 846.6E-12                   (X_U5.VSS)    0.0000                      
+
+(N16779555) 129.6E-09                 (N16779560) 129.6E-09                     
+
+(N16779951)    0.0000                 (N16779960)    0.0000                     
+
+(N16780078)    5.0000                 (N16787627)   80.0000                     
+
+(N16788727)    0.0000                 (N16791706)    0.0000                     
+
+(VOUT_IDEAL)    0.0000                (X_U5.LMG1210_VSS) 46.67E-09              
+
+(X_U5.LMG1210_LO_BST)-184.5E-09       (X_U5.LMG1210_CORE_HOH) 849.0E-12         
+
+(X_U5.LMG1210_CORE_LOH) 46.67E-09     (X_U5.LMG1210_VDD_VLDO)    4.6668         
+
+(X_U5.LMG1210_N16719683)     .9334    (X_U5.LMG1210_N16721723) 846.6E-12        
+
+(X_U5.LMG1210_N16721992)    0.0000    (X_U5.LMG1210_N16761314)    0.0000        
+
+(X_U5.LMG1210_CORE_HI_ON) 434.8E-12   (X_U5.LMG1210_CORE_LO_ON) 434.8E-12       
+
+(X_U5.X_LMG1210_PWM_U8.1)    0.0000   (X_U5.LMG1210_CORE_UVLOHI)    0.0000      
+
+(X_U5.LMG1210_PWM_DT_CLKZ)    1.0000  (X_U5.LMG1210_PWM_DT_DVDD)    1.8000      
+
+(X_U5.X_LMG1210_CORE_U5.1)    0.0000  (X_U5.X_LMG1210_CORE_U9.1)    0.0000      
+
+(X_U5.LMG1210_CORE_UVLOLOW)    0.0000 (X_U5.X_LMG1210_CORE_U10.1)    0.0000     
+
+(X_U5.X_LMG1210_CORE_U13.1)    1.0000 (X_U5.X_LMG1210_CORE_U14.1)    1.0000     
+
+(X_U5.LMG1210_PWM_N16722442)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16764262)    4.5000                                          
+
+(X_U5.LMG1210_PWM_N16766360)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16771098)     .3000                                          
+
+(X_U5.LMG1210_PWM_N16774119)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775153)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775155)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16778522)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16782654)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16783816)    0.0000                                          
+
+(X_U5.X_LMG1210_CORE_U11.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U12.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U15.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U7.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_CORE_U8.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM1)    2.1750                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM2)    2.3250                                          
+
+(X_U5.X_LMG1210_PWM_U8.INP1)   -2.3250                                          
+
+(X_U5.LMG1210_CORE_N16621524)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621542)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621646)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621650)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16621734)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621760)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621878)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621906)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621966)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16622210)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622224)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622258) 846.7E-12                                         
+
+(X_U5.LMG1210_CORE_N16622408)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16622620)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622670)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622702)    5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622828)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622840) 46.67E-09                                         
+
+(X_U5.LMG1210_CORE_N16622960)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622998)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16623018)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16623024)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16623050)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16623296)    4.9791                                         
+
+(X_U5.LMG1210_CORE_N16628590)    7.2000                                         
+
+(X_U5.LMG1210_CORE_N16628618)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16628650)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16631286)    3.5500                                         
+
+(X_U5.LMG1210_CORE_N16631334)     .1000                                         
+
+(X_U5.LMG1210_CORE_N16631366)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16633096)    4.2500                                         
+
+(X_U5.LMG1210_CORE_N16633124)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16645608)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16645614) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16682205) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16704239) 434.8E-12                                         
+
+(X_U5.X_LMG1210_CORE_U11.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U12.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U15.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U2.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U3.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U4.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INM1)    1.8000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INM1)    2.5518                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U10.INM1)    1.8000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP2)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INM1)   -1.0982                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP2)     .1000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INM1)    -.7500                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP2)     .2000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VXX)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VYY)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VZZ)    4.6668                                        
+
+(X_U5.LMG1210_PWM_DT_N16754844)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754872)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754912)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755160)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755188)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755228)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755282)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755332)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755440)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755450)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16758862)     .9009                                       
+
+(X_U5.LMG1210_PWM_DT_N16769401)     .9000                                       
+
+(X_U5.LMG1210_PWM_SELECT_HI_LO)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U8.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U9.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U28.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U29.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U30.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U31.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U32.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U33.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U34.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_CORE_U7.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_CORE_U8.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N222524)    4.5000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N242982)    4.5003                                    
+
+(X_U5.X_LMG1210_CORE_U11.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05348)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05382)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N08164)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09035)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09745)    4.5000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11113)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11626)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11911)     .4000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12664)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12783)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N13377)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INM1)   -4.6000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP2)     .1000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INM1)   -4.9000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP2)     .1000        
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+    V_V11        0.000E+00
+    V_V3        -5.000E-12
+    V_V10       -8.000E-11
+    V_V4         0.000E+00
+    V_V1         0.000E+00
+    V_V12       -9.339E-05
+    X_U5.V_LMG1210_PWM_V10   0.000E+00
+    X_U5.V_LMG1210_PWM_V6   0.000E+00
+    X_U5.V_LMG1210_PWM_DT_V5  -9.005E+02
+    X_U5.V_LMG1210_CORE_V10   0.000E+00
+    X_U5.V_LMG1210_CORE_V5   0.000E+00
+    X_U5.V_LMG1210_CORE_V6   0.000E+00
+    X_U5.V_LMG1210_CORE_V3   0.000E+00
+    X_U5.V_LMG1210_CORE_V4   0.000E+00
+    X_U5.V_LMG1210_CORE_V7   0.000E+00
+    X_U5.V_LMG1210_CORE_V8   0.000E+00
+    X_U5.V_LMG1210_CORE_V1   0.000E+00
+    X_U5.V_LMG1210_CORE_V2   0.000E+00
+    X_U5.V_LMG1210_CORE_V9   0.000E+00
+    X_U5.X_LMG1210_U_LDO.V_LDO_U1_V4   0.000E+00
+    X_U5.X_LMG1210_U_LDO.V_LDO_U1_V2   0.000E+00
+    X_U5.X_LMG1210_U_LDO.V_LDO_U1_V3   0.000E+00
+    X_U5.X_LMG1210_U_LDO.V_LDO_U1_V1   0.000E+00
+    X_U5.X_LMG1210_CORE_U11.VS  -4.200E-11
+    X_U5.X_LMG1210_CORE_U12.VS  -4.200E-11
+    X_U5.X_LMG1210_CORE_U15.VS  -4.200E-11
+    X_U5.X_LMG1210_U_LDO.X_LDO_F1.VF_LDO_F1  -3.331E-01
+
+    TOTAL POWER DISSIPATION   1.62E+03  WATTS
+
+Convergence problem in transient analysis at Time =  103.5E-15
+         Time step =  339.3E-21, minimum allowable step size =  400.0E-21
+
+  These voltages failed to converge:
+
+    V(HS)                     =     83.71V  \     49.27V
+    V(HB)                     =     88.35V  \     53.92V
+    V(X_U5.HS)                =     83.71V  \     49.27V
+    V(X_U5.LMG1210_N16721723) =     83.71V  \     49.27V
+    V(X_U5.LMG1210_CORE_N16622258) =     83.71V  \     49.27V
+    V(X_U5.LMG1210_CORE_N16622224) =     78.71V  \     44.27V
+    V(X_U5.LMG1210_CORE_N16623018) =     78.71V  \     44.27V
+    V(X_U5.LMG1210_CORE_N16623024) =     78.71V  \     44.27V
+    V(HO)                     =     83.71V  \     49.27V
+    V(X_U5.LMG1210_CORE_N16622210) =     78.71V  \     44.27V
+    V(X_U5.LMG1210_CORE_HOH)  =     83.71V  \     49.27V
+    V(X_U5.LMG1210_CORE_N16623050) =     88.35V  \     53.92V
+
+  These supply currents failed to converge:
+
+    I(X_U5.E_LMG1210_CORE_E3) =   -2.435nA  \   -33.46pA
+    I(X_U5.E_LMG1210_CORE_E2) =    29.80nA  \         0A
+    I(X_U5.E_LMG1210_CORE_E1) =   -60.13nA  \  -114.90nA
+    I(X_U5.E_LMG1210_CORE_E4) =    1.028nA  \  -631.76pA
+    I(X_U5.X_LMG1210_U_LDO.E_LDO_U1_ABM4) =   -5.081nA  \   -5.003nA
+    I(V_V10)                  =   -3.598mA  \   108.91uA
+    I(V_V12)                  =    10.66mA  \    10.60mA
+
+  These devices failed to converge:
+    X_U2.D1   X_U5.X_LMG1210_U4.D1 
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   HB)   88.3540  (   HO)   83.7060  (   HS)   83.7060  (   LO) 46.73E-09      
+
+(  BST)    4.6970  (  VDD)    5.0000  ( VOUT) 846.6E-12  (PWM_LI) 621.0E-06     
+
+(X_U5.HS)   83.7060                   (X_U5.VSS)    0.0000                      
+
+(N16779555) 129.6E-09                 (N16779560) 129.6E-09                     
+
+(N16779951)     .0010                 (N16779960) 10.35E-09                     
+
+(N16780078)    5.0000                 (N16787627)   80.0000                     
+
+(N16788727)    0.0000                 (N16791706)    0.0000                     
+
+(VOUT_IDEAL)    0.0000                (X_U5.LMG1210_VSS) 46.67E-09              
+
+(X_U5.LMG1210_LO_BST)-184.5E-09       (X_U5.LMG1210_CORE_HOH)   83.7060         
+
+(X_U5.LMG1210_CORE_LOH) 46.72E-09     (X_U5.LMG1210_VDD_VLDO)    4.6669         
+
+(X_U5.LMG1210_N16719683)     .9334    (X_U5.LMG1210_N16721723)   83.7060        
+
+(X_U5.LMG1210_N16721992)    0.0000    (X_U5.LMG1210_N16761314)    0.0000        
+
+(X_U5.LMG1210_CORE_HI_ON) 434.8E-12   (X_U5.LMG1210_CORE_LO_ON) 434.8E-12       
+
+(X_U5.X_LMG1210_PWM_U8.1)    0.0000   (X_U5.LMG1210_CORE_UVLOHI)    0.0000      
+
+(X_U5.LMG1210_PWM_DT_CLKZ)    1.0000  (X_U5.LMG1210_PWM_DT_DVDD)    1.8000      
+
+(X_U5.X_LMG1210_CORE_U5.1)    0.0000  (X_U5.X_LMG1210_CORE_U9.1)    0.0000      
+
+(X_U5.LMG1210_CORE_UVLOLOW)    0.0000 (X_U5.X_LMG1210_CORE_U10.1)    0.0000     
+
+(X_U5.X_LMG1210_CORE_U13.1)    1.0000 (X_U5.X_LMG1210_CORE_U14.1)    1.0000     
+
+(X_U5.LMG1210_PWM_N16722442)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16764262)    4.5000                                          
+
+(X_U5.LMG1210_PWM_N16766360)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16771098)     .3000                                          
+
+(X_U5.LMG1210_PWM_N16774119)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775153)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775155)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16778522)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16782654)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16783816)    0.0000                                          
+
+(X_U5.X_LMG1210_CORE_U11.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U12.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U15.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U7.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_CORE_U8.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM1)    2.1750                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM2)    2.3250                                          
+
+(X_U5.X_LMG1210_PWM_U8.INP1)   -2.3250                                          
+
+(X_U5.LMG1210_CORE_N16621524)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621542)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621646)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621650)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16621734)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621760)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621878)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621906)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621966)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16622210)   78.7060                                         
+
+(X_U5.LMG1210_CORE_N16622224)   78.7060                                         
+
+(X_U5.LMG1210_CORE_N16622258)   83.7060                                         
+
+(X_U5.LMG1210_CORE_N16622408)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16622620)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622670)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622702)    5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622828)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622840) 46.72E-09                                         
+
+(X_U5.LMG1210_CORE_N16622960)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622998)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16623018)   78.7060                                         
+
+(X_U5.LMG1210_CORE_N16623024)   78.7060                                         
+
+(X_U5.LMG1210_CORE_N16623050)   88.3540                                         
+
+(X_U5.LMG1210_CORE_N16623296)    4.9792                                         
+
+(X_U5.LMG1210_CORE_N16628590)    7.2000                                         
+
+(X_U5.LMG1210_CORE_N16628618)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16628650)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16631286)    3.5500                                         
+
+(X_U5.LMG1210_CORE_N16631334)     .1000                                         
+
+(X_U5.LMG1210_CORE_N16631366)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16633096)    4.2500                                         
+
+(X_U5.LMG1210_CORE_N16633124)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16645608)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16645614) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16682205) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16704239) 434.8E-12                                         
+
+(X_U5.X_LMG1210_CORE_U11.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U12.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U15.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U2.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U3.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U4.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INM1)    1.8000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INM1)    2.5518                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U10.INM1)    1.8000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP2)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INM1)   -1.0982                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP2)     .1000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INM1)    -.7500                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP2)     .2000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VXX)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VYY)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VZZ)    4.6669                                        
+
+(X_U5.LMG1210_PWM_DT_N16754844)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754872)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754912)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755160)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755188)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755228)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755282)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755332)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755440)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755450)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16758862)    1.3657                                       
+
+(X_U5.LMG1210_PWM_DT_N16769401)     .9000                                       
+
+(X_U5.LMG1210_PWM_SELECT_HI_LO)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U8.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U9.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U28.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U29.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U30.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U31.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U32.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U33.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U34.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_CORE_U7.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_CORE_U8.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N222524)    4.5000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N242982)    4.5003                                    
+
+(X_U5.X_LMG1210_CORE_U11.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05348)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05382)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N08164)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09035)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09745)    4.5000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11113)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11626)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11911)     .4000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12664)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12783)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N13377)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INM1)   -4.6000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP2)     .1000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INM1)   -4.9000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP2)     .1000        
+
+Resuming Simulation with the following settings
+ITL4 = 165
+ABSTOL = 5.62e-10
+VNTOL = 4.47e-05
+
+Convergence problem in transient analysis at Time =  103.5E-15
+         Time step =  169.7E-21, minimum allowable step size =  400.0E-21
+
+  These voltages failed to converge:
+
+    V(HS)                     =   -2.588KV  \     3.001V
+    V(HB)                     =   -2.583KV  \     7.649V
+    V(X_U5.HS)                =   -2.588KV  \     3.001V
+    V(X_U5.LMG1210_N16721723) =   -2.588KV  \     3.001V
+    V(X_U5.LMG1210_N16719683) =   932.08mV  \   933.36mV
+    V(BST)                    =    -14.30V  \     4.657V
+    V(X_U5.LMG1210_VDD_VLDO)  =     4.660V  \     4.667V
+    V(X_U5.LMG1210_CORE_N16622258) =   -2.588KV  \     3.001V
+    V(X_U5.LMG1210_CORE_N16622224) =   -2.593KV  \    -1.999V
+    V(X_U5.LMG1210_CORE_N16623018) =   -2.593KV  \    -1.999V
+    V(X_U5.LMG1210_CORE_N16623024) =   -2.593KV  \    -1.999V
+    V(HO)                     =   -2.588KV  \     3.001V
+    V(X_U5.LMG1210_CORE_N16622210) =   -2.593KV  \    -1.999V
+    V(X_U5.LMG1210_CORE_HOH)  =   -2.588KV  \     3.001V
+    V(X_U5.LMG1210_CORE_N16623050) =   -2.583KV  \     7.649V
+    V(X_U5.X_LMG1210_U_LDO.LDO_VZZ) =     4.660V  \     4.667V
+
+  These supply currents failed to converge:
+
+    I(X_U5.E_LMG1210_CORE_E3) =    2.025nA  \  -261.96pA
+    I(X_U5.E_LMG1210_CORE_E2) =   -3.815uA  \  -116.42pA
+    I(X_U5.E_LMG1210_CORE_E1) =   -76.59uA  \    4.772nA
+    I(X_U5.E_LMG1210_CORE_E4) =  -756.53pA  \   111.86pA
+    I(X_U5.X_LMG1210_U_LDO.E_LDO_U1_ABM4) =    3.183nA  \   -4.999nA
+    I(L_L1)                   =    43.70nA  \    44.46nA
+    I(V_V10)                  =   -26.88mA  \  -486.90uA
+    I(V_V12)                  =    4.165mA  \    2.755mA
+    I(X_U5.X_LMG1210_U_LDO.X_LDO_F1.VF_LDO_F1) =  -320.27mA  \  -333.07mA
+
+  These devices failed to converge:
+    X_U4.D1   X_U3.D1   X_U5.X_LMG1210_U4.D1 
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   HB)-2582.8000  (   HO)-2587.5000  (   HS)-2587.5000  (   LO) 46.66E-09      
+
+(  BST)  -14.3000  (  VDD)    5.0000  ( VOUT) 846.6E-12  (PWM_LI) 621.0E-06     
+
+(X_U5.HS)-2587.5000                   (X_U5.VSS)    0.0000                      
+
+(N16779555) 129.6E-09                 (N16779560) 129.6E-09                     
+
+(N16779951)     .0010                 (N16779960) 10.35E-09                     
+
+(N16780078)    5.0000                 (N16787627)   80.0000                     
+
+(N16788727)    0.0000                 (N16791706)    0.0000                     
+
+(VOUT_IDEAL)    0.0000                (X_U5.LMG1210_VSS) 46.61E-09              
+
+(X_U5.LMG1210_LO_BST)-184.3E-09       (X_U5.LMG1210_CORE_HOH)-2587.5000         
+
+(X_U5.LMG1210_CORE_LOH) 46.66E-09     (X_U5.LMG1210_VDD_VLDO)    4.6604         
+
+(X_U5.LMG1210_N16719683)     .9321    (X_U5.LMG1210_N16721723)-2587.5000        
+
+(X_U5.LMG1210_N16721992)    0.0000    (X_U5.LMG1210_N16761314)    0.0000        
+
+(X_U5.LMG1210_CORE_HI_ON) 434.8E-12   (X_U5.LMG1210_CORE_LO_ON) 434.8E-12       
+
+(X_U5.X_LMG1210_PWM_U8.1)    0.0000   (X_U5.LMG1210_CORE_UVLOHI)    0.0000      
+
+(X_U5.LMG1210_PWM_DT_CLKZ)    1.0000  (X_U5.LMG1210_PWM_DT_DVDD)    1.8000      
+
+(X_U5.X_LMG1210_CORE_U5.1)    0.0000  (X_U5.X_LMG1210_CORE_U9.1)    0.0000      
+
+(X_U5.LMG1210_CORE_UVLOLOW)    0.0000 (X_U5.X_LMG1210_CORE_U10.1)    0.0000     
+
+(X_U5.X_LMG1210_CORE_U13.1)    1.0000 (X_U5.X_LMG1210_CORE_U14.1)    1.0000     
+
+(X_U5.LMG1210_PWM_N16722442)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16764262)    4.5000                                          
+
+(X_U5.LMG1210_PWM_N16766360)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16771098)     .3000                                          
+
+(X_U5.LMG1210_PWM_N16774119)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775153)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16775155)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16778522)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16782654)    0.0000                                          
+
+(X_U5.LMG1210_PWM_N16783816)    0.0000                                          
+
+(X_U5.X_LMG1210_CORE_U11.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U12.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U15.Yp)    1.0000                                          
+
+(X_U5.X_LMG1210_CORE_U7.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_CORE_U8.INT) 434.8E-12                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM1)    2.1750                                          
+
+(X_U5.X_LMG1210_PWM_U8.INM2)    2.3250                                          
+
+(X_U5.X_LMG1210_PWM_U8.INP1)   -2.3250                                          
+
+(X_U5.LMG1210_CORE_N16621524)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621542)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621646)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16621650)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16621734)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621760)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621878)    1.8000                                         
+
+(X_U5.LMG1210_CORE_N16621906)     .4000                                         
+
+(X_U5.LMG1210_CORE_N16621966)    1.0000                                         
+
+(X_U5.LMG1210_CORE_N16622210)-2592.5000                                         
+
+(X_U5.LMG1210_CORE_N16622224)-2592.5000                                         
+
+(X_U5.LMG1210_CORE_N16622258)-2587.5000                                         
+
+(X_U5.LMG1210_CORE_N16622408)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16622620)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622670)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622702)    5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622828)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622840) 46.65E-09                                         
+
+(X_U5.LMG1210_CORE_N16622960)   -5.0000                                         
+
+(X_U5.LMG1210_CORE_N16622998)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16623018)-2592.5000                                         
+
+(X_U5.LMG1210_CORE_N16623024)-2592.5000                                         
+
+(X_U5.LMG1210_CORE_N16623050)-2582.8000                                         
+
+(X_U5.LMG1210_CORE_N16623296)    4.9792                                         
+
+(X_U5.LMG1210_CORE_N16628590)    7.2000                                         
+
+(X_U5.LMG1210_CORE_N16628618)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16628650)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16631286)    3.5500                                         
+
+(X_U5.LMG1210_CORE_N16631334)     .1000                                         
+
+(X_U5.LMG1210_CORE_N16631366)    4.6482                                         
+
+(X_U5.LMG1210_CORE_N16633096)    4.2500                                         
+
+(X_U5.LMG1210_CORE_N16633124)     .2000                                         
+
+(X_U5.LMG1210_CORE_N16645608)    0.0000                                         
+
+(X_U5.LMG1210_CORE_N16645614) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16682205) 434.8E-12                                         
+
+(X_U5.LMG1210_CORE_N16704239) 434.8E-12                                         
+
+(X_U5.X_LMG1210_CORE_U11.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U12.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U15.Ypp)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U2.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U3.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U4.YINT)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INM1)    1.8000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U5.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INM1)    2.5518                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP1)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U9.INP2)    0.0000                                         
+
+(X_U5.X_LMG1210_CORE_U10.INM1)    1.8000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U10.INP2)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U11.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U11.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U12.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U12.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INM1)   -1.0982                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U13.INP2)     .1000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INM1)    -.7500                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP1)    0.0000                                        
+
+(X_U5.X_LMG1210_CORE_U14.INP2)     .2000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTf) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTp)    1.0000                                        
+
+(X_U5.X_LMG1210_CORE_U15.OUTr) 434.8E-12                                        
+
+(X_U5.X_LMG1210_CORE_U15.VSUP)    1.0000                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VXX)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VYY)    4.5003                                        
+
+(X_U5.X_LMG1210_U_LDO.LDO_VZZ)    4.6604                                        
+
+(X_U5.LMG1210_PWM_DT_N16754844)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754872)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16754912)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755160)    1.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755188)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755228)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755282)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755332)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755440)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16755450)    0.0000                                       
+
+(X_U5.LMG1210_PWM_DT_N16758862)    1.3658                                       
+
+(X_U5.LMG1210_PWM_DT_N16769401)     .9000                                       
+
+(X_U5.LMG1210_PWM_SELECT_HI_LO)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U8.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U9.Yint)    0.0000                                       
+
+(X_U5.X_LMG1210_PWM_DT_U28.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U29.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U30.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U31.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U32.YINT)    1.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U33.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_PWM_DT_U34.YINT)    0.0000                                      
+
+(X_U5.X_LMG1210_CORE_U7.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_CORE_U8.X_U1.YINT)    0.0000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N222524)    4.5000                                    
+
+(X_U5.X_LMG1210_U_LDO.LDO_N242982)    4.5003                                    
+
+(X_U5.X_LMG1210_CORE_U11.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U11.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U12.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW1.test)    0.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XNSW2.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW1.test)    1.0000                                  
+
+(X_U5.X_LMG1210_CORE_U15.XPSW2.test)    0.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05348)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N05382)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N08164)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09035)    5.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N09745)    4.5000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11113)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11626)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N11911)     .4000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12664)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N12783)     .1000                                  
+
+(X_U5.X_LMG1210_U_LDO.LDO_U1_N13377)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.1)    1.0000                                  
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INM1)   -4.6000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U1.INP2)     .1000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INM1)   -4.9000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP1)    0.0000                               
+
+(X_U5.X_LMG1210_U_LDO.X_LDO_U1_U2.INP2)     .1000        
+
+Resuming Simulation with the following settings
+ITL4 = 165
+ABSTOL = 3.16e-08
+VNTOL = 0.001
+
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 1000
+ ITL2 = 400
+ ITL4 = 400
+ RELTOL = 0.001
+ ABSTOL = 3.16228e-08
+ VNTOL = 0.001
+ PIVTOL = 1e-13
+
+**** 10/02/24 14:30:21 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "Test_TOP_PWM-TR"  [ C:\Users\A1201-admin\Documents\Exjobb\Library\Oracd\snom615c\LMG1210_PSPICE_TRANS\lmg1210-pspicefil
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =     1081.89
+  Total job time (using Solver 1)   =        9.64
+

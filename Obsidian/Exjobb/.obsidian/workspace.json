@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "5c8acca5809055fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "52d3beb741733920",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "53dd86bd80b83651",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "switching mosfet  and gatedriver test.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0300bee05faa7fcf",
+    "type": "split",
+    "children": [
+      {
+        "id": "770742ad7862b1ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56d0eaccbc0e682d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1b0490896785242a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0630d83e0737046e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "59d24e48c5870a6c",
+    "type": "split",
+    "children": [
+      {
+        "id": "62368e65e03316eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d1f56cff6b18866",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "switching mosfet  and gatedriver test.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8cbbf5571d5eb490",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "switching mosfet  and gatedriver test.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "46ec802440efa47b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c1331e09e4042e59",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "switching mosfet  and gatedriver test.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "53dd86bd80b83651",
+  "lastOpenFiles": [
+    "Current generator deign.md",
+    "Components.md",
+    "Amplifers.md",
+    "switching mosfet  and gatedriver test.md",
+    "Berring Currents.md",
+    "test here.md",
+    "High pressision mesurments.md",
+    "Mosfet.md",
+    "Links.md",
+    "ADC and DAC.md",
+    "Circuit PID.md",
+    "Johan.md",
+    "PWM Generation.md",
+    "Pasted image 20240923124735.png",
+    "[[Amplifers.md",
+    "Daglig rapport/Daglig rapport.md",
+    "create a link.md",
+    "Pasted image 20240916152506.png",
+    "PWM Pulse.png",
+    "Ultra-High-Bandwidth_Power_Amplifiers_A_Technology_Overview_and_Future_Prospects.pdf",
+    "Untitled",
+    "().md",
+    "Untitled.canvas",
+    "Welcome.md",
+    "2024-09-17.md",
+    "Daglig rapport"
+  ]
+}
