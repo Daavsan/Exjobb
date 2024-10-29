@@ -1,0 +1,7 @@
+Allment
+5V matning till gatedrive funkar bra
+vid högre matning blir HO,LO brusig (utan Fet på)
+
+
+Rf:
+ökade deadtime till 3ns, med 339k ohm paralelet med 1.8M
