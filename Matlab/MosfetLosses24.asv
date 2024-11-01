@@ -3,8 +3,8 @@ textscale = 1.5; % Text and legend scale option
 Vin = 20;
 Vg=5;
 t=linspace(0,1,1e4);
-Rl=470./(exp(25.*(t-0.01)));
-Rl(4.21e3:1e4)=linspace(1-0.021,470-0.021,5.79e3+1);
+Rl=470./(exp(16.*(t-0.01)));
+Rl(2e3:1e4)=linspace(1,470,8e3+1);
 Io = Vin ./ Rl;
 Iripple = 1000E-3;
 fsw = 50e6;
@@ -17,7 +17,7 @@ duty = 0.5;
 ntransistors=10
 
 % Call the function with the given values
-power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'MRF101AN', ntransistors);
+%power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'MRF101AN', ntransistors);
 
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
@@ -38,10 +38,10 @@ function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS
     Pcon = ntransistors.*(RDS.*((2.*Io./(ntransistors./2)).^2));
     
     % Gate Charge Losses
-    Pg = ((ntransistors * Qg * Vg * fsw));
+    Pg = ones(size(ntransistors * Qg * Vg * fsw));
     
     % Switching Losses
-    Psw = ntransistors * Vin * (Io./ntransistors) * tcross / 2 * fsw;
+    Psw = ntransistors .* Vin .* (Io./ntransistors);
     
     % Total Power Wasted
     Pwaste = (Pcon + Psw + Pg);
@@ -129,7 +129,7 @@ function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS
     loglog(Io, Pcon, 'r', 'LineWidth', linethickness);
     hold on;
     loglog(Io, Psw, 'b', 'LineWidth', linethickness);
-    loglog(Io, Pg * ones(size(t)), 'g', 'LineWidth', linethickness); % Pg is constant, replicate for all current steps
+    loglog(Io, Pg, 'g', 'LineWidth', linethickness); % Pg is constant, replicate for all current steps
     loglog(Io, Pwaste, 'm', 'LineWidth', linethickness);
     loglog(Io, Pdeliver, 'c', 'LineWidth', linethickness);
     title('Power vs Current');
