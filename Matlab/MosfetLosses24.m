@@ -1,5 +1,10 @@
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
+Vin = 20;
+Vg=5;
+t=linspace(0,1,1e4);
+Rl=470./(exp(16.*(t-0.01)));
+Rl(0.2e6:1e6)=linspace(1,470,0.8e6+1);
 Io = Vin ./ Rl;
 Iripple = 1000E-3;
 fsw = 50e6;
@@ -9,10 +14,10 @@ tcross = tr + tf;
 RDS = 450E-3;
 Qg = 5*149e-12;
 duty = 0.5;
-ntransistors=2
+ntransistors=10
 
 % Call the function with the given values
-[Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, nsamples, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'MRF101AN', ntransistors);
+%power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'MRF101AN', ntransistors);
 
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
@@ -23,29 +28,29 @@ RDS = 90E-3;
 Qg = 370e-12;
 duty = 0.5;
 
-[Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, nsamples, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'EPC8009', ntransistors);
+[Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'EPC8009', ntransistors);
 
 
-function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, nsamples, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, titleStr, ntransistors)
+function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, titleStr, ntransistors)
     % Define the number of samples
     
     % Calculate Conduction Losses
-    Pcon = (RDS.*((2*Io/ntransistors).^2))/1;
+    Pcon = ntransistors.*(RDS.*((2.*Io./(ntransistors./2)).^2));
     
     % Gate Charge Losses
-    Pg = ntransistors * Qg * Vg * fsw;
+    Pg = ones(size(ntransistors * Qg * Vg * fsw));
     
     % Switching Losses
-    Psw = ntransistors * Vin * Io * tcross / 2 * fsw / 1;
+    Psw = ntransistors .* Vin .* (Io./ntransistors) .* tcross ./ 2 .* fsw;
     
     % Total Power Wasted
     Pwaste = (Pcon + Psw + Pg);
     
     % Power Delivered
-    Pdeliver = (Vin .* Io .* duty) ./ 1;
+    Pdeliver = (Vin .* Io .* duty);
     
     % Efficiency
-    efficiency = 1 - 1 * (1 * Pwaste ./ Pdeliver) / 1;
+    efficiency = 1 - 1 .* (1 .* Pwaste ./ Pdeliver);
 
     % Plot the calculated values for easy visualization
     figure('Name', ['Power Loss Analysis - ' titleStr], 'NumberTitle', 'off');
@@ -124,7 +129,7 @@ function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS
     loglog(Io, Pcon, 'r', 'LineWidth', linethickness);
     hold on;
     loglog(Io, Psw, 'b', 'LineWidth', linethickness);
-    loglog(Io, Pg * ones(size(Io)), 'g', 'LineWidth', linethickness); % Pg is constant, replicate for all current steps
+    loglog(Io, Pg, 'g', 'LineWidth', linethickness); % Pg is constant, replicate for all current steps
     loglog(Io, Pwaste, 'm', 'LineWidth', linethickness);
     loglog(Io, Pdeliver, 'c', 'LineWidth', linethickness);
     title('Power vs Current');

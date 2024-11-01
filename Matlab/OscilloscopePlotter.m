@@ -3,7 +3,7 @@ function OscilloscopePlotter(filename,timeUnit,titlename, linethickness, textsca
 
     % Set default values for funtion input
     if nargin < 2 || isempty(timeUnit)
-        timeUnit = 's'; % Default time [s]
+        timeUnit = "s"; % Default time [s]
     end
     if nargin < 3 || isempty(titlename)
         titlename = filename; % Default title
@@ -43,14 +43,19 @@ end
 
 lines = readlines(filename+".csv");
 for i = 1:length(lines)
-    if contains(lines(i), 'TimeScale')
+    if contains(lines(i), 'XStart')
         % Split the line by ':' and extract the value
-        parts = split(lines(i), ':');
-        ttot = str2double(parts{2}); % Convert the string to a number
-        break; % Exit the loop once the value is found
+        XStart = split(lines(i), ':');
+        %break; % Exit the loop once the value is found
+    end
+    if contains(lines(i), 'XStop')
+        % Split the line by ':' and extract the value
+        XStop = split(lines(i), ':');
+        %break; % Exit the loop once the value is found
     end
 end
- 
+ttot = str2double(XStop{2})-str2double(XStart{2}); % Convert the string to a number 
+
 % Plot the calculated values for easy visualization
 %figure('Name', [filename], 'NumberTitle', 'off');
 

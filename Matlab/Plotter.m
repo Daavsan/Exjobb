@@ -38,10 +38,13 @@ OscilloscopePlotter(HighGS,timeUnit, "High RFFet")
 legend('Gate','Soruce');
 nexttile;
 OscilloscopePlotter(LowGD,timeUnit, "Low RFFet")
-legend('Drain','Source');
+legend('Drain','Gate');
 
 
 figure;
 OscilloscopePlotter(NoFet,timeUnit, "No fet")
+
+figure;
+OscilloscopePlotter(test,timeUnit)
 
 
