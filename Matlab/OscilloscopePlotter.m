@@ -1,23 +1,35 @@
-function OscilloscopePlotter(filename,timeUnit,titlename, linethickness, textscale)
+function OscilloscopePlotter(filename, timeUnit, varargin)
+% Set default values
+titlename = filename;
+linethickness = 2;
+textscale = 1.5;
+rescalefactor = 1;
 
 
-    % Set default values for funtion input
-    if nargin < 2 || isempty(timeUnit)
-        timeUnit = "s"; % Default time [s]
-    end
-    if nargin < 3 || isempty(titlename)
-        titlename = filename; % Default title
-    end
-    if nargin < 4 || isempty(linethickness)
-        linethickness = 2; % Default line thickness
-    end
-    if nargin < 5 || isempty(textscale)
-        textscale = 1.5; % Default text scale
+    % Parse optional parameter-value pairs
+    for k = 1:2:length(varargin)
+        paramName = varargin{k};
+        paramValue = varargin{k + 1};
+        switch lower(paramName)
+            case 'titlename'
+                titlename = paramValue;
+            case 'linethickness'
+                linethickness = paramValue;
+            case 'textscale'
+                textscale = paramValue;
+            case 'rescale2factor'
+                rescalefactor = paramValue;
+            otherwise
+                error('Unknown parameter name: %s', paramName)
+        end
     end
 
+
+    % Your plotting code here, using the values of timeUnit, titlename, linethickness, textscale, and rescale2factor
 
 wfm=load(filename+".wfm.csv");
 %metadata=load(filename+".csv");
+
 
 if timeUnit == "s"
     timeFactor=1;
@@ -63,7 +75,15 @@ ttot = str2double(XStop{2})-str2double(XStart{2}); % Convert the string to a num
 %sgtitle(['Power Loss Analysis - ' titleStr], 'FontSize', 12 * textscale);
 t=((1:length(wfm)).*ttot)./length(wfm)./timeFactor;
 % Plot Current vs Time
-plot(t,wfm, 'LineWidth', linethickness);
+if length(rescalefactor) ~= 1
+    for i = 1:(length(rescalefactor))
+    plot(t,(wfm(:,i).*rescalefactor(i)), 'LineWidth', linethickness);
+    hold on
+    end
+    hold off
+else
+    plot(t,wfm, 'LineWidth', linethickness);
+end
 title(titlename);
 xlabel("Time [" + timeUnit + "]");
 ylabel('Voltage [V]');
@@ -71,5 +91,4 @@ set(gca, 'FontSize', 10 * textscale);
 set(get(gca, 'XLabel'), 'FontSize', 10 * textscale);
 set(get(gca, 'YLabel'), 'FontSize', 10 * textscale);
 grid on;
-    
 end
