@@ -9,6 +9,9 @@ HighGS ="100nsHighGateSourcecsv";
 LowGD = "LowGateDrain";
 NoFet = "NOFetGate";
 test= "test";
+rfmin= "MinINPulse";
+GanMin = "GanFetMinPW" 
+
 
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
@@ -45,6 +48,8 @@ figure;
 OscilloscopePlotter(NoFet,timeUnit, "No fet")
 
 figure;
-OscilloscopePlotter(test,timeUnit)
+OscilloscopePlotter(rfmin,timeUnit)
 
+figure;
+OscilloscopePlotter(GanMin,timeUnit)
 
