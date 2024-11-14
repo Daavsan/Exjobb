@@ -79,3 +79,4 @@ nexttile;
 OscilloscopePlotter(DiffGanVoHighVgs, timeUnit,'rescale2factor',[rescalefactor,1])
 legend('Vo','Vgs')
 
+

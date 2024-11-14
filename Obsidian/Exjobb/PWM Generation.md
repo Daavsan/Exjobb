@@ -9,3 +9,5 @@ Three stage opamp and comparator [PWM generator](https://www.ti.com/lit/an/sboa2
 Simple [resistor-diode-capacitor-inveter](https://www.robotroom.com/PWM.html) design, obs i couldn't simulate
 
 ![[Pasted image 20240923124735.png]]
+
+This [paper](https://ieeexplore.ieee.org/abstract/document/4562735) for fast current mode tirangular wae generator

@@ -1,0 +1,57 @@
+
+**** 11/14/24 18:07:35 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10u 0 0.1n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FILTER
+L_L1         N14552 N14471  2u  
+R_R1         N14467 N14471  300 TC=0,0 
+R_R2         0 N14496  0.1 TC=0,0 
+L_L2         N14471 N14496  3u  
+C_C1         0 N14467  70p  TC=0,0 
+X_U3         N39180 0 VCC_ARROW VCC N39122 MAX4223/MXM
+R_R3         N38944 N39122  2.5k TC=0,0 
+V_V6         N39270 0  AC 0
++SIN 0 15 0.1meg 0 0 0
+R_R4         N39180 N39122  2.5k TC=0,0 
+X_U4         N39270 N38954 VCC_ARROW VCC N14552 MAX4223/MXM
+V_V4         VCC_ARROW 0 15
+R_R5         N38954 N39180  1k TC=0,0 
+C_C2         N38944 N38954  2p  TC=0,0 
+V_V5         VCC 0 -15
+X_U1         0 N38944 VCC_ARROW VCC N38954 MAX4223/MXM
+R_R6         0 N42512  0.1 TC=0,0 
+
+**** RESUMING trans.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N42512.
+

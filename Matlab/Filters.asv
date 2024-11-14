@@ -1,0 +1,17 @@
+
+
+clear
+
+s=tf('s');
+L1 =1e-6
+L2 =1e-6;
+C1 =1e-9
+RL=1e6
+
+zL1=L1*s;
+zL2=L2*s
+zC1=1/(C1*s)
+zRL=RL
+
+
+%CLR=parallel((1/(C1*s)),(L2*s))

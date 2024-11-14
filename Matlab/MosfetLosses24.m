@@ -1,6 +1,6 @@
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
-Vin = 20;
+Vin = 60;
 Vg=5;
 t=linspace(0,1,1e4);
 Rl=470./(exp(25.*(t-0.01)));
@@ -14,19 +14,19 @@ tcross = tr + tf;
 RDS = 450E-3;
 Qg = 5*149e-12;
 duty = 0.5;
-ntransistors=10
+ntransistors=6
 
 % Call the function with the given values
 power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'MRF101AN', ntransistors);
 
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
-tr = 0.5E-9;
-tf = 0.5E-9;
+tr = 3E-9;
+tf = 3E-9;
 tcross = tr + tf;
 RDS = 90E-3;
 Qg = 370e-12;
-duty = 0.5;
+duty = 0.8;
 
 [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS, Io, Iripple, duty, Qg, Vg, fsw, Vin, Rl, tcross, t, linethickness, textscale, 'EPC8009', ntransistors);
 

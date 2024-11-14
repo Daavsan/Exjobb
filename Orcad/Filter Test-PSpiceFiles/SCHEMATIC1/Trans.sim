@@ -3,7 +3,7 @@
 @Settings: 0 1
 @General:
 ProfileName= "Trans" 
-ProfileFile= "Trans.sim" 
+ProfileFile= "trans.sim" 
 Connectivity= "SCHEMATIC1.net" 
 NetlistFile= "Trans.cir" 
 DataFile= "Trans.dat" 

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Amplifers.md",
+                "file": "PWM Generation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Amplifers"
+              "title": "PWM Generation"
             }
           }
         ],
@@ -180,12 +180,12 @@
   "active": "932d4c7748694d0b",
   "lastOpenFiles": [
     "Current generator deign.md",
+    "Amplifers.md",
     "ADC and DAC.md",
     "Daglig rapport/Daglig rapport.md",
     "Circuit PID.md",
     "Johan.md",
     "Components.md",
-    "Amplifers.md",
     "switching mosfet  and gatedriver test.md",
     "Berring Currents.md",
     "test here.md",
