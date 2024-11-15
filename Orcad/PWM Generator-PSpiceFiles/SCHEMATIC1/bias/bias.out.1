@@ -1,7 +1,7 @@
 
-**** 11/11/24 21:51:18 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:03:36 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\PWM Generator-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -23,7 +23,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 1.7u 1u 0.1n SKIPBP 
+.TRAN  0 2u  0 0.1n SKIPBP 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -32,24 +32,25 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source PWM GENERATOR
-X_U1         0 N36794 VCC_ARROW VCC N36507 MAX4223/MXM
-R_R1         N36794 N36822  2.5k TC=0,0 
+R_R1         N36490 N36818  2.5k TC=0,0 
+R_R2         N36794 N36818  2.5k TC=0,0 
 V_V4         VCC_ARROW 0 15
 V_V5         VCC 0 -15
-X_U2         N37971 0 VCC_ARROW VCC N36822 MAX4223/MXM
-R_R3         N37971 N36822  2.5k TC=0,0 
-R_R4         N36507 N37971  1k TC=0,0 
-C_C1         N36794 N36507  1p  TC=0,0 
-V_V7         N40998 0  AC 0
-+SIN 0 18 5000000 0 0 0
-X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
+C_C1         N36794 N36505  2p  TC=0,0 
+R_R3         N36505 N36490  1k TC=0,0 
+X_U4         N38350 N36505 VCC_ARROW VCC N38449 MAX4223/MXM
+V_V6         N38350 0  AC 0
++SIN 0 15 1meg 0 0 0
+X_U5         0 N36794 VCC_ARROW VCC N36505 AD8009an/AD
+X_U6         N36490 0 VCC_ARROW VCC N36818 AD8009an/AD
+X_U8         N38350 N36505 VCC_ARROW VCC 0 0 N40820 N40824 MAX913/MXM
 
 **** RESUMING bias.cir ****
 .END
 
-**** 11/11/24 21:51:18 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:03:36 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\PWM Generator-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
 
  ****     Diode MODEL PARAMETERS
@@ -60,30 +61,26 @@ X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
 
 
 
-               X_U1.DX         X_U1.DY         X_U1.DN         X_U2.DX         
-          IS    1.000000E-15   10.000000E-18   10.000000E-15    1.000000E-15 
+               X_U4.DX         X_U4.DY         X_U4.DN         X_U5.d1         
+          IS    1.000000E-15   10.000000E-18   10.000000E-15   10.000000E-15 
           EG                                     .3                          
          XTI                                    0                            
           KF                                    1.667000E-09                 
 
 
-               X_U2.DY         X_U2.DN         X_U3.DX         X_U3.DY         
-          IS   10.000000E-18   10.000000E-15    1.000000E-15   10.000000E-18 
-          EG                     .3                                          
-         XTI                    0                                            
-          KF                    1.667000E-09                                 
+               X_U5.dn         X_U6.d1         X_U6.dn         X_U8.DX         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15  800.000000E-18 
+          KF   10.000000E-09                   10.000000E-09                 
 
 
-               X_U3.DN         
-          IS   10.000000E-15 
-          EG     .3          
-         XTI    0            
-          KF    1.667000E-09 
+               X_U8.DP         X_U8.DX2        
+          IS   10.000000E-15    1.000000E-15 
+           N    1.000000E-03    1.000000E-03 
 
 
-**** 11/11/24 21:51:18 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:03:36 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\PWM Generator-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
 
  ****     BJT MODEL PARAMETERS
@@ -94,7 +91,7 @@ X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
 
 
 
-               X_U1.QNI        X_U1.QPI        X_U1.QNN        X_U1.QPN        
+               X_U4.QNI        X_U4.QPI        X_U4.QNN        X_U4.QPN        
                NPN             PNP             NPN             PNP             
        LEVEL    1               1               1               1            
           IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
@@ -120,13 +117,12 @@ X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
            D     .87             .52             .87             .52         
 
 
-               X_U2.QNI        X_U2.QPI        X_U2.QNN        X_U2.QPN        
-               NPN             PNP             NPN             PNP             
+               X_U5.qp1        X_U5.qp2        X_U5.qn1        X_U5.qn2        
+               PNP             PNP             NPN             NPN             
        LEVEL    1               1               1               1            
-          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
-          BF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
           NF    1               1               1               1            
-         VAF   15              15              15              15            
           BR    1               1               1               1            
           NR    1               1               1               1            
          ISS    0               0               0               0            
@@ -140,19 +136,18 @@ X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
         XCJC    1               1               1               1            
          CJS    0               0               0               0            
          VJS     .75             .75             .75             .75         
-          KF   67.000000E-15   67.000000E-15  413.000000E-15  413.000000E-15 
+          KF    0               0               0               0            
           AF    1               1               1               1            
-          CN    2.42            2.2             2.42            2.2          
-           D     .87             .52             .87             .52         
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
 
 
-               X_U3.QNI        X_U3.QPI        X_U3.QNN        X_U3.QPN        
-               NPN             PNP             NPN             PNP             
+               X_U6.qp1        X_U6.qp2        X_U6.qn1        X_U6.qn2        
+               PNP             PNP             NPN             NPN             
        LEVEL    1               1               1               1            
-          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
-          BF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
           NF    1               1               1               1            
-         VAF   15              15              15              15            
           BR    1               1               1               1            
           NR    1               1               1               1            
          ISS    0               0               0               0            
@@ -166,27 +161,96 @@ X_U3         N40998 N36507 VCC_ARROW VCC N41186 MAX4223/MXM
         XCJC    1               1               1               1            
          CJS    0               0               0               0            
          VJS     .75             .75             .75             .75         
-          KF   67.000000E-15   67.000000E-15  413.000000E-15  413.000000E-15 
+          KF    0               0               0               0            
           AF    1               1               1               1            
-          CN    2.42            2.2             2.42            2.2          
-           D     .87             .52             .87             .52         
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
+
+
+               X_U8.qin        X_U8.qmi        X_U8.qmo        X_U8.qoc        
+               NPN             PNP             PNP             NPN             
+       LEVEL    1               1               1               1            
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   16.67            1.002000E+03    1.000000E+03  181            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               1.000000E-15    1.000000E-15 
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          TF                                                   15.800000E-12 
+          TR                                    6.475000E-09    4.172000E-09 
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.2             2.2             2.42         
+           D     .87             .52             .52             .87         
+
+
+**** 11/15/24 16:03:36 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U8.PMOS       
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    0            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
 
 Reducing minimum delta to make the circuit converge.
 
-ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  36.60E-09.
-         Time step =  745.1E-21, minimum allowable step size =  1.000E-18
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.162E-12.
+         Time step =  126.1E-21, minimum allowable step size =  1.000E-18
 
   These supply currents failed to converge:
 
-    I(X_U1.EH)                =    15.71pA  \   162.54pA
-    I(X_U3.EH)                =    71.94nA  \    71.00nA
-    I(V_V4)                   =    10.00GA  \    10.00GA
-    I(V_V7)                   =   -10.00GA  \   -10.00GA
-    I(X_U1.V5)                =   -1.863nA  \   931.32pA
-    I(X_U2.VOS)               =  -646.00pA  \  -180.33pA
-    I(X_U2.V5)                =    3.567nA  \    7.293nA
-    I(X_U3.VOS)               =   -10.00GA  \   -10.00GA
-    I(X_U3.V5)                =   -8.382nA  \    3.260nA
+    I(V_V6)                   =   -81.42uA  \   -43.72uA
+    I(X_U4.V5)                =    2.532nA  \   -5.215pA
+    I(X_U8.VA1)               =   395.42uA  \   186.27uA
+
+  These devices failed to converge:
+    X_U8.DA52 
 
 
 
@@ -195,203 +259,155 @@ ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  36.60E
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(  VCC)  -15.0000  (N36507)   -3.2897 (N36794)    -.0128 (N36822)  -13.9390     
+(  VCC)  -15.0000  (N36490)-20.15E-06 (N36505)     .0055 (N36794)     .0036     
 
-(N37971)   -6.7163 (N40998)   16.4290 (N41186)   13.7710 (X_U1.3)    0.0000     
+(N36818) 2.586E-06 (N38350) 109.6E-06 (N38449)     .0053 (N40820)-199.4E-06     
 
-(X_U1.4)    -.6085 (X_U1.5)     .6085 (X_U1.6)     .6085 (X_U1.7)    -.6085     
+(N40824)    5.0003 (X_U4.3) 109.6E-06 (X_U4.4)    -.6241 (X_U4.5)     .6250     
 
-(X_U1.8)   14.6680 (X_U1.9)  -14.8760 (X_U2.3)   -6.7163 (X_U2.4)    -.9879     
+(X_U4.6)     .8098 (X_U4.7)    -.7983 (X_U4.8)     .0386 (X_U4.9)    -.0258     
 
-(X_U2.5)   -7.0274 (X_U2.6)   -7.2363 (X_U2.7)    -.7790 (X_U2.8)   15.0000     
+(X_U5.3)     .0020 (X_U5.4)     .0036 (X_U5.5)     .7883 (X_U5.6)    -.7842     
 
-(X_U2.9)    -.1527 (X_U3.3)   16.4290 (X_U3.4)   15.0000 (X_U3.5)   -5.8251     
+(X_U5.7)-143.7E-06 (X_U5.8)   13.1700 (X_U5.9)  -13.1700 (X_U6.3)     .0020     
 
-(X_U3.6)   -6.0340 (X_U3.7)   15.0000 (X_U3.8)   15.0000 (X_U3.9)  -15.0000     
+(X_U6.4)    0.0000 (X_U6.5)     .7882 (X_U6.6)    -.7843 (X_U6.7) 226.3E-06     
 
-(X_U1.10)   14.7000                   (X_U1.11)  -14.7000                       
+(X_U6.8)   13.1700 (X_U6.9)  -13.1700 (X_U8.5)  -14.3770 (X_U8.7)   -1.5884     
 
-(X_U1.15)   -2.2009                   (X_U1.16)   13.2450                       
+(X_U8.8)   14.6520 (X_U8.9)   14.7010 (X_U4.10)   14.7000                       
 
-(X_U1.17)  -13.2450                   (X_U1.20)   -3.1358                       
+(X_U4.11)  -14.7000                   (X_U4.15)-105.4E-06                       
 
-(X_U1.21)   -3.1358                   (X_U1.22)   -3.1358                       
+(X_U4.16)   13.2450                   (X_U4.17)  -13.2450                       
 
-(X_U1.23)   -3.1358                   (X_U1.30)   14.7000                       
+(X_U4.20)-209.2E-09                   (X_U4.21)-209.2E-09                       
 
-(X_U1.31)  -14.7000                   (X_U1.33)    3.7103                       
+(X_U4.22)-209.2E-09                   (X_U4.23)-209.2E-09                       
 
-(X_U1.34)  -10.2900                   (X_U1.35)   15.7810                       
+(X_U4.30)     .8740                   (X_U4.31)    -.8575                       
 
-(X_U1.36)   15.0000                   (X_U1.37)   -3.1358                       
+(X_U4.33)    7.0053                   (X_U4.34)   -6.9947                       
 
-(X_U1.38)   -3.1358                   (X_U1.49)    0.0000                       
+(X_U4.35)   14.3070                   (X_U4.36)   15.0000                       
 
-(X_U1.98)    0.0000                   (X_U2.10)   14.7000                       
+(X_U4.37)-209.2E-09                   (X_U4.38)-209.2E-09                       
 
-(X_U2.11)  -14.7000                   (X_U2.15)  -14.0410                       
+(X_U4.49)    0.0000                   (X_U4.98)    0.0000                       
 
-(X_U2.16)   13.2450                   (X_U2.17)  -13.2450                       
+(X_U5.10)     .0055                   (X_U5.11)    -.4395                       
 
-(X_U2.20)  -14.0400                   (X_U2.21)  -14.0400                       
+(X_U5.12)     .4505                   (X_U5.13) 12.08E-06                       
 
-(X_U2.22)  -14.0400                   (X_U2.23)  -14.0400                       
+(X_U5.14)-143.7E-06                   (X_U5.15)-703.6E-09                       
 
-(X_U2.30)   14.7000                   (X_U2.31)    -.9842                       
+(X_U5.16)    -.5956                   (X_U5.17)-22.01E-06                       
 
-(X_U2.33)   -6.9389                   (X_U2.34)  -20.9390                       
+(X_U5.18)    0.0000                   (X_U5.19)    0.0000                       
 
-(X_U2.35)   14.2300                   (X_U2.36)   15.0000                       
+(X_U5.20)-7.933E-06                   (X_U5.21)     .5300                       
 
-(X_U2.37)  -14.0400                   (X_U2.38)  -14.0400                       
+(X_U5.22)    0.0000                   (X_U5.23)-45.19E-06                       
 
-(X_U2.49)    0.0000                   (X_U2.98)    0.0000                       
+(X_U5.24)     .5750                   (X_U5.26)    0.0000                       
 
-(X_U3.10)   14.7000                   (X_U3.11)  -14.7000                       
+(X_U5.27)    0.0000                   (X_U5.30)     .0018                       
 
-(X_U3.15)   13.7130                   (X_U3.16)   13.2450                       
+(X_U5.40)    -.6993                   (X_U5.90)   15.0000                       
 
-(X_U3.17)  -13.2450                   (X_U3.20)   13.7300                       
+(X_U5.91)  -15.0000                   (X_U5.98)    0.0000                       
 
-(X_U3.21)   13.7300                   (X_U3.22)   13.7300                       
+(X_U6.10) 2.586E-06                   (X_U6.11)    -.4450                       
 
-(X_U3.23)   13.7300                   (X_U3.30)   14.7000                       
+(X_U6.12)     .4450                   (X_U6.13) 1.150E-06                       
 
-(X_U3.31)  -14.7000                   (X_U3.33)   20.7710                       
+(X_U6.14) 226.3E-06                   (X_U6.15) 1.146E-06                       
 
-(X_U3.34)    6.7711                   (X_U3.35)   14.2540                       
+(X_U6.16)     .6006                   (X_U6.17) 26.74E-06                       
 
-(X_U3.36)   15.0000                   (X_U3.37)   13.7300                       
+(X_U6.18)    0.0000                   (X_U6.19)    0.0000                       
 
-(X_U3.38)   13.7300                   (X_U3.49)    0.0000                       
+(X_U6.20)-7.933E-06                   (X_U6.21)     .5300                       
 
-(X_U3.98)    0.0000                   (VCC_ARROW)   15.0000                 
+(X_U6.22)    0.0000                   (X_U6.23)-45.19E-06                       
 
+(X_U6.24)     .5750                   (X_U6.26)    0.0000                       
 
-**** Interrupt ****
-**** Param: RELTOL = 0.001
-**** Param: ABSTOL = 1e-12
-**** Param: VNTOL = 1e-06
-**** Param: GMIN = 1e-12
-**** Param: TSTOP = 1.7e-06
-**** Param: TMAX = 1e-10
-**** Param: ITL1 = 150
-**** Param: ITL2 = 20
-**** Param: ITL4 = 100
-**** Param: AutoConverge = 0
-**** Param: AutoConverge.ITL1 = 1000
-**** Param: AutoConverge.ITL2 = 1000
-**** Param: AutoConverge.ITL4 = 1000
-**** Param: AutoConverge.RELTOL = 0.05
-**** Param: AutoConverge.ABSTOL = 0.001
-**** Param: AutoConverge.VNTOL = 0.001
-**** Param: AutoConverge.PIVTOL = 1e-10
-**** Param: ADVCONV = 1
-**** Param: Current_Simulation = 3
-**** Param: METHOD = 0
-**** Param: TRTOL = 7
-**** Param: STEPGMIN = 0
-**** Param: GMINSTEPS = 0
-**** Param: ITL6 = 0
-**** Param: NOSTEPDEP = 0
-**** Param: PTRANSTEP = 0
-**** Param: GMINSRC = 0
-**** Param: PSEUDOTRAN = 0
-**** Param: NOSTEPSRC = 0
+(X_U6.27)    0.0000                   (X_U6.30)-10.08E-06                       
 
-ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  36.60E-09.
-         Time step =  745.1E-21, minimum allowable step size =  1.000E-18
+(X_U6.40)    -.4858                   (X_U6.90)   15.0000                       
 
-  These supply currents failed to converge:
+(X_U6.91)  -15.0000                   (X_U6.98)    0.0000                       
 
-    I(X_U1.EH)                =    18.49pA  \   159.92pA
-    I(X_U3.EH)                =    71.76nA  \    71.94nA
-    I(V_V4)                   =    10.00GA  \    10.00GA
-    I(V_V7)                   =   -10.00GA  \   -10.00GA
-    I(X_U1.V5)                =  -232.83pA  \  -931.32pA
-    I(X_U2.VOS)               =   -5.711pA  \    52.50pA
-    I(X_U2.V5)                =  -161.98pA  \    3.567nA
-    I(X_U3.VOS)               =   -10.00GA  \   -10.00GA
-    I(X_U3.V5)                =   465.66pA  \    3.725nA
+(X_U8.10)  -14.4030                   (X_U8.11)  -14.4030                       
 
+(X_U8.20)    -.9443                   (X_U8.21)    -.9499                       
 
+(X_U8.23)    -.9445                   (X_U8.25)    -.9499                       
 
-  Last node voltages tried were:
+(X_U8.32)  -14.1660                   (X_U8.44)  -15.0000                       
 
- NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+(X_U8.51)   -1.0006                   (X_U8.52)    1.0000                       
 
+(X_U8.53)   -1.0000                   (X_U8.55) 200.0E-06                       
 
-(  VCC)  -15.0000  (N36507)   -3.2897 (N36794)    -.0128 (N36822)  -13.9390     
+(X_U8.60) 200.1E-06                   (X_U8.98)    0.0000                       
 
-(N37971)   -6.7163 (N40998)   16.4290 (N41186)   13.7710 (X_U1.3)    0.0000     
+(X_U8.101)   15.0000                  (X_U8.302)  -14.1660                      
 
-(X_U1.4)    -.6085 (X_U1.5)     .6085 (X_U1.6)     .6085 (X_U1.7)    -.6085     
+(X_U8.303)    1.4000                  (X_U8.304) -155.6600                      
 
-(X_U1.8)   14.6680 (X_U1.9)  -14.8760 (X_U2.3)   -6.7163 (X_U2.4)    -.9879     
+(X_U8.305)-607.0E-06                  (X_U8.312)    0.0000                      
 
-(X_U2.5)   -7.0274 (X_U2.6)   -7.2363 (X_U2.7)    -.7790 (X_U2.8)   15.0000     
+(X_U8.314)   14.0000                  (X_U8.315)    5.0005                      
 
-(X_U2.9)    -.1527 (X_U3.3)   16.4290 (X_U3.4)   15.0000 (X_U3.5)   -5.8251     
+(X_U8.330)    5.0000                  (X_U8.331)-326.4E-06                      
 
-(X_U3.6)   -6.0340 (X_U3.7)   15.0000 (X_U3.8)   15.0000 (X_U3.9)  -15.0000     
+(X_U8.332)-326.4E-06                  (X_U8.333)-186.4E-06                      
 
-(X_U1.10)   14.7000                   (X_U1.11)  -14.7000                       
+(X_U8.354)   14.0000                  (X_U8.355)   14.0000                      
 
-(X_U1.15)   -2.2009                   (X_U1.16)   13.2450                       
+(X_U8.362)    5.0007                  (X_U8.364)   36.0070                      
 
-(X_U1.17)  -13.2450                   (X_U1.20)   -3.1358                       
+(X_U8.365)   36.0070                  (X_U8.380)   36.0070                      
 
-(X_U1.21)   -3.1358                   (X_U1.22)   -3.1358                       
+(X_U8.381)    5.0006                  (X_U8.382)    5.0006                      
 
-(X_U1.23)   -3.1358                   (X_U1.30)   14.7000                       
+(X_U8.383)    5.0003                  (X_U8.399)   15.0000                      
 
-(X_U1.31)  -14.7000                   (X_U1.33)    3.7103                       
+(X_U8.400)  -15.0000                  (X_U8.402)-186.4E-06                      
 
-(X_U1.34)  -10.2900                   (X_U1.35)   15.7810                       
+(X_U8.403)    1.4000                  (X_U8.404)  -14.0020                      
 
-(X_U1.36)   15.0000                   (X_U1.37)   -3.1358                       
+(X_U8.405)-544.7E-06                  (X_U8.412)-688.2E-06                      
 
-(X_U1.38)   -3.1358                   (X_U1.49)    0.0000                       
+(X_U8.414)  -14.0070                  (X_U8.415)-754.5E-06                      
 
-(X_U1.98)    0.0000                   (X_U2.10)   14.7000                       
+(X_U8.430)    5.0000                  (X_U8.431)-304.4E-06                      
 
-(X_U2.11)  -14.7000                   (X_U2.15)  -14.0410                       
+(X_U8.432)-304.4E-06                  (X_U8.452)    5.0007                      
 
-(X_U2.16)   13.2450                   (X_U2.17)  -13.2450                       
+(X_U8.454)   36.0070                  (X_U8.455)    5.0006                      
 
-(X_U2.20)  -14.0400                   (X_U2.21)  -14.0400                       
+(X_U8.462)    5.0003                  (X_U8.464)   36.0030                      
 
-(X_U2.22)  -14.0400                   (X_U2.23)  -14.0400                       
+(X_U8.465)    5.0008                  (X_U8.480)    5.0000                      
 
-(X_U2.30)   14.7000                   (X_U2.31)    -.9842                       
+(X_U8.481)    5.0005                  (X_U8.482)    5.0005                      
 
-(X_U2.33)   -6.9389                   (X_U2.34)  -20.9390                       
+(X_U8.602)  -14.1660                  (X_U8.604)  155.6600                      
 
-(X_U2.35)   14.2300                   (X_U2.36)   15.0000                       
+(X_U8.605)    5.0007                  (X_U8.612)    5.0003                      
 
-(X_U2.37)  -14.0400                   (X_U2.38)  -14.0400                       
+(X_U8.614)  -36.0030                  (X_U8.615)-688.2E-06                      
 
-(X_U2.49)    0.0000                   (X_U2.98)    0.0000                       
+(X_U8.622)-199.4E-06                  (X_U8.624)   14.0020                      
 
-(X_U3.10)   14.7000                   (X_U3.11)  -14.7000                       
+(X_U8.625)    5.0007                  (X_U8.630)    5.0000                      
 
-(X_U3.15)   13.7130                   (X_U3.16)   13.2450                       
+(X_U8.640)    5.0000                  (X_U8.650)    5.0000                      
 
-(X_U3.17)  -13.2450                   (X_U3.20)   13.7300                       
-
-(X_U3.21)   13.7300                   (X_U3.22)   13.7300                       
-
-(X_U3.23)   13.7300                   (X_U3.30)   14.7000                       
-
-(X_U3.31)  -14.7000                   (X_U3.33)   20.7710                       
-
-(X_U3.34)    6.7711                   (X_U3.35)   14.2540                       
-
-(X_U3.36)   15.0000                   (X_U3.37)   13.7300                       
-
-(X_U3.38)   13.7300                   (X_U3.49)    0.0000                       
-
-(X_U3.98)    0.0000                   (VCC_ARROW)   15.0000                 
+(VCC_ARROW)   15.0000                 
 
 
 **** Interrupt ****

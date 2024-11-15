@@ -1,0 +1,1091 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "f9e86466-762c-46b4-b346-dcdb343a479a")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:R_Pack08"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "RN"
+				(at -12.7 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_Pack08"
+				(at 10.16 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 12.065 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "8 resistor network, parallel topology"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R network parallel topology isolated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Pack08_0_1"
+				(rectangle
+					(start -11.43 -2.413)
+					(end 8.89 2.413)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -10.795 1.905)
+					(end -9.525 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -8.255 1.905)
+					(end -6.985 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -5.715 1.905)
+					(end -4.445 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -3.175 1.905)
+					(end -1.905 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.635 1.905)
+					(end 0.635 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -2.54) (xy -10.16 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 1.905) (xy -10.16 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 -2.54) (xy -7.62 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 1.905) (xy -7.62 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -2.54) (xy -5.08 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 1.905) (xy -5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -2.54 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.905) (xy -2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.905) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 5.08 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 1.905) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -2.54) (xy 7.62 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 1.905) (xy 7.62 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.905 1.905)
+					(end 3.175 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 4.445 1.905)
+					(end 5.715 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 6.985 1.905)
+					(end 8.255 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Pack08_1_1"
+				(pin passive line
+					(at -10.16 -5.08 90)
+					(length 2.54)
+					(name "R1.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 270)
+					(length 2.54)
+					(name "R7.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "R6.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "R5.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 5.08 270)
+					(length 2.54)
+					(name "R4.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 270)
+					(length 2.54)
+					(name "R3.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 5.08 270)
+					(length 2.54)
+					(name "R2.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 5.08 270)
+					(length 2.54)
+					(name "R1.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -5.08 90)
+					(length 2.54)
+					(name "R2.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 90)
+					(length 2.54)
+					(name "R3.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 90)
+					(length 2.54)
+					(name "R4.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "R5.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "R6.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 90)
+					(length 2.54)
+					(name "R7.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 90)
+					(length 2.54)
+					(name "R8.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 5.08 270)
+					(length 2.54)
+					(name "R8.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Simulation_SPICE:OPAMP"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 3.81 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "${SIM.PARAMS}"
+				(at 3.81 -3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=in+ 2=in- 3=vcc 4=vee 5=out"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "SUBCKT"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sim.Library" "${KICAD8_SYMBOL_DIR}/Simulation_SPICE.sp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Name" "kicad_builtin_opamp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "simulation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "OPAMP_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "OPAMP_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Pack08")
+		(at 90.17 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6599d572-a515-4a75-b634-b2453e17588f")
+		(property "Reference" "RN1"
+			(at 77.47 44.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "R_Pack08"
+			(at 77.47 46.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.235 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "8 resistor network, parallel topology"
+			(at 90.17 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a2a7ec9-aa0b-42ac-9eff-dce0ac097b6d")
+		)
+		(pin "2"
+			(uuid "5104540d-9104-46d4-bd43-d977fefa3b5f")
+		)
+		(pin "4"
+			(uuid "8aabb746-56c7-41d1-b0d6-695100c12053")
+		)
+		(pin "16"
+			(uuid "df544d5d-700b-49c7-bded-316dcc63ff7d")
+		)
+		(pin "13"
+			(uuid "e957221f-93f8-431c-902d-4e908c9c709a")
+		)
+		(pin "7"
+			(uuid "08c5fa6d-55b9-4994-aab2-95541b90bbd7")
+		)
+		(pin "12"
+			(uuid "dfa9a25c-4ddb-41b2-85c4-2b17272a19c5")
+		)
+		(pin "14"
+			(uuid "78d04cc4-d6cb-4671-b48b-cccd478d5a35")
+		)
+		(pin "6"
+			(uuid "c76248ad-91f6-4384-a93b-7d785f9f9a0f")
+		)
+		(pin "8"
+			(uuid "e39c191a-c189-4bae-a483-29241989362f")
+		)
+		(pin "11"
+			(uuid "cdf6d5ff-0187-4c8d-92f7-3e437915102e")
+		)
+		(pin "5"
+			(uuid "715e29bf-e373-4512-8a3f-b55a84d1a289")
+		)
+		(pin "9"
+			(uuid "2284fa3a-58fa-4a8e-b063-71455114fbd4")
+		)
+		(pin "10"
+			(uuid "8f51cfc3-bdc9-495f-819a-fe5c991c2929")
+		)
+		(pin "15"
+			(uuid "a4c29cda-2170-46dd-ac92-82c0bcfbc51f")
+		)
+		(pin "3"
+			(uuid "45a7b11d-6f7f-41dc-9dde-7869c09c095c")
+		)
+		(instances
+			(project ""
+				(path "/009e4554-048b-4d13-979d-7fdd312db04d/2d653d6d-8296-4bb3-b632-1ef04c2dec48"
+					(reference "RN1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:OPAMP")
+		(at 87.63 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6f4d3d9-12c7-43e8-8d67-8e115d9fbf10")
+		(property "Reference" "U2"
+			(at 95.25 63.5314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 95.25 65.4365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=in+ 2=in- 3=vcc 4=vee 5=out"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KICAD8_SYMBOL_DIR}/Simulation_SPICE.sp"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "kicad_builtin_opamp"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "22476338-b670-4a10-9db2-c27adea2811f")
+		)
+		(pin "5"
+			(uuid "9aa2bbf5-6c8e-4d3c-a561-804e3080adfb")
+		)
+		(pin "2"
+			(uuid "1295f8f8-4d32-4381-bcf0-32b85426e69b")
+		)
+		(pin "3"
+			(uuid "66b4c984-c8f9-4304-9c21-591fae366fe1")
+		)
+		(pin "4"
+			(uuid "ed4c06a8-363b-425e-9e6c-67e9d7635bd1")
+		)
+		(instances
+			(project ""
+				(path "/009e4554-048b-4d13-979d-7fdd312db04d/2d653d6d-8296-4bb3-b632-1ef04c2dec48"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

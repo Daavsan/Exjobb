@@ -1,5 +1,5 @@
 
-**** 11/14/24 17:15:09 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -32,22 +32,23 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source PWM GENERATOR
-X_U1         0 N36794 VCC_ARROW VCC N36505 MAX4223/MXM
 R_R1         N36490 N36818  2.5k TC=0,0 
 R_R2         N36794 N36818  2.5k TC=0,0 
 V_V4         VCC_ARROW 0 15
 V_V5         VCC 0 -15
 C_C1         N36794 N36505  2p  TC=0,0 
-X_U3         N36490 0 VCC_ARROW VCC N36818 MAX4223/MXM
 R_R3         N36505 N36490  1k TC=0,0 
 X_U4         N38350 N36505 VCC_ARROW VCC N38449 MAX4223/MXM
 V_V6         N38350 0  AC 0
 +SIN 0 15 1meg 0 0 0
+X_U5         0 N36794 VCC_ARROW VCC N36505 AD8009an/AD
+X_U6         N36490 0 VCC_ARROW VCC N36818 AD8009an/AD
+X_U8         N38350 N36505 VCC_ARROW VCC N36505 N36505 N40820 N40824 MAX913/MXM
 
 **** RESUMING bias.cir ****
 .END
 
-**** 11/14/24 17:15:09 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -60,28 +61,24 @@ V_V6         N38350 0  AC 0
 
 
 
-               X_U1.DX         X_U1.DY         X_U1.DN         X_U3.DX         
-          IS    1.000000E-15   10.000000E-18   10.000000E-15    1.000000E-15 
+               X_U4.DX         X_U4.DY         X_U4.DN         X_U5.d1         
+          IS    1.000000E-15   10.000000E-18   10.000000E-15   10.000000E-15 
           EG                                     .3                          
          XTI                                    0                            
           KF                                    1.667000E-09                 
 
 
-               X_U3.DY         X_U3.DN         X_U4.DX         X_U4.DY         
-          IS   10.000000E-18   10.000000E-15    1.000000E-15   10.000000E-18 
-          EG                     .3                                          
-         XTI                    0                                            
-          KF                    1.667000E-09                                 
+               X_U5.dn         X_U6.d1         X_U6.dn         X_U8.DX         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15  800.000000E-18 
+          KF   10.000000E-09                   10.000000E-09                 
 
 
-               X_U4.DN         
-          IS   10.000000E-15 
-          EG     .3          
-         XTI    0            
-          KF    1.667000E-09 
+               X_U8.DP         X_U8.DX2        
+          IS   10.000000E-15    1.000000E-15 
+           N    1.000000E-03    1.000000E-03 
 
 
-**** 11/14/24 17:15:09 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -92,58 +89,6 @@ V_V6         N38350 0  AC 0
 ******************************************************************************
 
 
-
-
-               X_U1.QNI        X_U1.QPI        X_U1.QNN        X_U1.QPN        
-               NPN             PNP             NPN             PNP             
-       LEVEL    1               1               1               1            
-          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
-          BF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
-          NF    1               1               1               1            
-         VAF   15              15              15              15            
-          BR    1               1               1               1            
-          NR    1               1               1               1            
-         ISS    0               0               0               0            
-          RE    0               0               0               0            
-          RC    0               0               0               0            
-         CJE    0               0               0               0            
-         VJE     .75             .75             .75             .75         
-         CJC    0               0               0               0            
-         VJC     .75             .75             .75             .75         
-         MJC     .33             .33             .33             .33         
-        XCJC    1               1               1               1            
-         CJS    0               0               0               0            
-         VJS     .75             .75             .75             .75         
-          KF   67.000000E-15   67.000000E-15  413.000000E-15  413.000000E-15 
-          AF    1               1               1               1            
-          CN    2.42            2.2             2.42            2.2          
-           D     .87             .52             .87             .52         
-
-
-               X_U3.QNI        X_U3.QPI        X_U3.QNN        X_U3.QPN        
-               NPN             PNP             NPN             PNP             
-       LEVEL    1               1               1               1            
-          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
-          BF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
-          NF    1               1               1               1            
-         VAF   15              15              15              15            
-          BR    1               1               1               1            
-          NR    1               1               1               1            
-         ISS    0               0               0               0            
-          RE    0               0               0               0            
-          RC    0               0               0               0            
-         CJE    0               0               0               0            
-         VJE     .75             .75             .75             .75         
-         CJC    0               0               0               0            
-         VJC     .75             .75             .75             .75         
-         MJC     .33             .33             .33             .33         
-        XCJC    1               1               1               1            
-         CJS    0               0               0               0            
-         VJS     .75             .75             .75             .75         
-          KF   67.000000E-15   67.000000E-15  413.000000E-15  413.000000E-15 
-          AF    1               1               1               1            
-          CN    2.42            2.2             2.42            2.2          
-           D     .87             .52             .87             .52         
 
 
                X_U4.QNI        X_U4.QPI        X_U4.QNN        X_U4.QPN        
@@ -172,10 +117,133 @@ V_V6         N38350 0  AC 0
            D     .87             .52             .87             .52         
 
 
+               X_U5.qp1        X_U5.qp2        X_U5.qn1        X_U5.qn2        
+               PNP             PNP             NPN             NPN             
+       LEVEL    1               1               1               1            
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
+
+
+               X_U6.qp1        X_U6.qp2        X_U6.qn1        X_U6.qn2        
+               PNP             PNP             NPN             NPN             
+       LEVEL    1               1               1               1            
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
+
+
+               X_U8.qin        X_U8.qmi        X_U8.qmo        X_U8.qoc        
+               NPN             PNP             PNP             NPN             
+       LEVEL    1               1               1               1            
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   16.67            1.002000E+03    1.000000E+03  181            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               1.000000E-15    1.000000E-15 
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          TF                                                   15.800000E-12 
+          TR                                    6.475000E-09    4.172000E-09 
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.2             2.2             2.42         
+           D     .87             .52             .52             .87         
+
+
+**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U8.PMOS       
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    0            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+Reducing minimum delta to make the circuit converge.
+
 
           JOB CONCLUDED
 
-**** 11/14/24 17:15:09 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -187,6 +255,6 @@ V_V6         N38350 0  AC 0
 
 
 
-  License check-out time            =      180.63
-  Total job time (using Solver 1)   =        4.19
+  License check-out time            =      187.28
+  Total job time (using Solver 1)   =        5.34
 
