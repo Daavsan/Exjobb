@@ -1,5 +1,5 @@
 
-**** 11/15/24 13:44:20 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 15:19:56 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -34,7 +34,7 @@
 * source FILTER
 L_L1         N14552 N14471  1u  
 R_Rdamp         N14467 N14471  200 TC=0,0 
-R_Rload         0 N14502  5k TC=0,0 
+R_Rload         0 N14502  10 TC=0,0 
 L_L2         N14471 N46457  1.5u  
 C_C1         0 N14467  70p  TC=0,0 
 V_V1         N14552 0  
@@ -48,15 +48,15 @@ R_R3         N49627 N49541  10k TC=0,0
 R_R4         N49514 0  10k TC=0,0 
 X_U4         N49514 N49541 VCC_ARROW VCC N49627 AD8004AN/AD
 X_U5         N53122 N53126 VCC_ARROW VCC N53244 AD8004AN/AD
-R_R6         N53126 N14502  1.0005k TC=0,0 
-R_R8         N53244 N53126  10k TC=0,0 
-R_R7         N53122 0  10.005k TC=0,0 
-R_R5         N53122 N46457  1.00k TC=0,0 
+R_R6         N53126 N14502  1.0003k TC=0,0 
+R_R8         N53244 N53126  9997 TC=0,0 
+R_R7         N53122 0  10003 TC=0,0 
+R_R5         N53122 N46457  999.7 TC=0,0 
 
 **** RESUMING trans.cir ****
 .END
 
-**** 11/15/24 13:44:20 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 15:19:56 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -74,7 +74,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
           KF                   10.000000E-09                   10.000000E-09 
 
 
-**** 11/15/24 13:44:20 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 15:19:56 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -112,7 +112,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
            D     .52             .87             .52             .87         
 
 
-**** 11/15/24 13:44:20 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 15:19:56 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -127,7 +127,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(  VCC)  -30.0000  (N14467)    0.0000 (N14471)    0.0000 (N14502)-7.080E-06     
+(  VCC)  -30.0000  (N14467)    0.0000 (N14471)    0.0000 (N14502)-7.010E-06     
 
 (N14552)    0.0000 (N46457)    0.0000 (N49514)    -.0364 (N49541)    -.0354     
 
@@ -173,7 +173,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
 
 (X_U5.26)    0.0000                   (X_U5.27)    0.0000                       
 
-(X_U5.30)    -.0359                   (X_U5.40)    -.4391                       
+(X_U5.30)    -.0359                   (X_U5.40)    -.4388                       
 
 (X_U5.90)   30.0000                   (X_U5.91)  -30.0000                       
 
@@ -185,7 +185,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
     VOLTAGE SOURCE CURRENTS
     NAME         CURRENT
 
-    V_V1        -1.437E-04
+    V_V1        -1.430E-04
     V_V4        -2.808E-02
     V_V5         2.808E-02
     X_U4.v1     -1.295E-07
@@ -196,24 +196,24 @@ R_R5         N53122 N46457  1.00k TC=0,0
     X_U4.vnoise3   6.652E-05
     X_U4.vnoise4  -6.652E-05
     X_U4.vcur1  -4.508E-13
-    X_U4.vcur2   2.520E-07
-    X_U4.vo1    -9.703E-08
-    X_U4.vo2     9.709E-08
-    X_U4.voc    -2.520E-07
+    X_U4.vcur2   2.521E-07
+    X_U4.vo1    -9.706E-08
+    X_U4.vo2     9.712E-08
+    X_U4.voc    -2.521E-07
     X_U4.vcl3    3.855E-03
     X_U4.vcl4    3.855E-03
-    X_U5.v1     -1.290E-07
+    X_U5.v1     -1.289E-07
     X_U5.vcl1    2.830E-11
     X_U5.vcl2    2.822E-11
     X_U5.vnoise1   5.206E-08
     X_U5.vnoise2  -5.206E-08
     X_U5.vnoise3   6.652E-05
     X_U5.vnoise4  -6.652E-05
-    X_U5.vcur1  -4.491E-13
-    X_U5.vcur2   2.364E-07
-    X_U5.vo1    -9.101E-08
-    X_U5.vo2     9.107E-08
-    X_U5.voc    -2.364E-07
+    X_U5.vcur1  -4.488E-13
+    X_U5.vcur2   2.330E-07
+    X_U5.vo1    -8.973E-08
+    X_U5.vo2     8.979E-08
+    X_U5.voc    -2.330E-07
     X_U5.vcl3    3.855E-03
     X_U5.vcl4    3.855E-03
 
@@ -223,7 +223,7 @@ R_R5         N53122 N46457  1.00k TC=0,0
 
           JOB CONCLUDED
 
-**** 11/15/24 13:44:20 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 15:19:56 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -235,6 +235,6 @@ R_R5         N53122 N46457  1.00k TC=0,0
 
 
 
-  License check-out time            =     1497.44
-  Total job time (using Solver 1)   =        8.19
+  License check-out time            =     1596.90
+  Total job time (using Solver 1)   =        7.50
 

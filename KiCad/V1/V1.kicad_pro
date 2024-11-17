@@ -386,22 +386,6 @@
     [
       "009e4554-048b-4d13-979d-7fdd312db04d",
       "Root"
-    ],
-    [
-      "552882c6-fbf4-48f5-8eb3-e65279e22659",
-      "Filter"
-    ],
-    [
-      "2d653d6d-8296-4bb3-b632-1ef04c2dec48",
-      "Current Sense"
-    ],
-    [
-      "48ca8345-8316-47e4-807c-cf8b28b34b61",
-      "PWM Generator"
-    ],
-    [
-      "52e4b1a1-8594-450b-ad98-c94421ea9557",
-      "Driver"
     ]
   ],
   "text_variables": {}

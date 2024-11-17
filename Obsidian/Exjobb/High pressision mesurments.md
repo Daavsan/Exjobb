@@ -3,7 +3,7 @@
 * Shunts: 
 	* cheap  
 	* DC and AC
-	* Not able of tens of MHz
+	* [equations](https://incompliancemag.com/difference-amplifier-common-mode-and-differential-mode-voltages/) 
 * Current transformer
 	* Capable of tens of MHz
 	* Driving circuit are normally not

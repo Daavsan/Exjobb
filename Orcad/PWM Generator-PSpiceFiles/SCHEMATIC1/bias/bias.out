@@ -1,5 +1,5 @@
 
-**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 18:25:49 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -32,23 +32,26 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source PWM GENERATOR
-R_R1         N36490 N36818  2.5k TC=0,0 
-R_R2         N36794 N36818  2.5k TC=0,0 
-V_V4         VCC_ARROW 0 15
-V_V5         VCC 0 -15
-C_C1         N36794 N36505  2p  TC=0,0 
-R_R3         N36505 N36490  1k TC=0,0 
-X_U4         N38350 N36505 VCC_ARROW VCC N38449 MAX4223/MXM
+R_R1         N36490 N36818  150 TC=0,0 
+R_R2         N36794 N36818  150 TC=0,0 
+V_V4         VCC_ARROW 0 6
+V_V5         VCC 0 -1
+C_C1         N36794 N36505  30p  TC=0,0 
+R_R3         N36505 N36490  150 TC=0,0 
+X_U4         N75044 N36505 VCC_ARROW VCC N38449 MAX4223/MXM
 V_V6         N38350 0  AC 0
-+SIN 0 15 1meg 0 0 0
-X_U5         0 N36794 VCC_ARROW VCC N36505 AD8009an/AD
-X_U6         N36490 0 VCC_ARROW VCC N36818 AD8009an/AD
-X_U8         N38350 N36505 VCC_ARROW VCC N36505 N36505 N40820 N40824 MAX913/MXM
++SIN 2 2 5meg 0 0 0
+X_U5         N60513 N36794 VCC_ARROW 0 N36505 AD8009an/AD
+X_U6         N36490 N60513 VCC_ARROW 0 N36818 AD8009an/AD
+R_R6         N60513 VCC_ARROW  1 TC=0,0 
+R_R7         N60513 0  1 TC=0,0 
+R_R8         N38350 N75044  1 TC=0,0 
+R_R9         0 N38449  1k TC=0,0 
 
 **** RESUMING bias.cir ****
 .END
 
-**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 18:25:49 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -68,17 +71,12 @@ X_U8         N38350 N36505 VCC_ARROW VCC N36505 N36505 N40820 N40824 MAX913/MXM
           KF                                    1.667000E-09                 
 
 
-               X_U5.dn         X_U6.d1         X_U6.dn         X_U8.DX         
-          IS   10.000000E-15   10.000000E-15   10.000000E-15  800.000000E-18 
-          KF   10.000000E-09                   10.000000E-09                 
-
-
-               X_U8.DP         X_U8.DX2        
-          IS   10.000000E-15    1.000000E-15 
-           N    1.000000E-03    1.000000E-03 
+               X_U5.dn         X_U6.d1         X_U6.dn         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15 
+          KF   10.000000E-09                   10.000000E-09 
 
 
-**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 18:25:49 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -167,83 +165,10 @@ X_U8         N38350 N36505 VCC_ARROW VCC N36505 N36505 N40820 N40824 MAX913/MXM
            D     .52             .52             .87             .87         
 
 
-               X_U8.qin        X_U8.qmi        X_U8.qmo        X_U8.qoc        
-               NPN             PNP             PNP             NPN             
-       LEVEL    1               1               1               1            
-          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
-          BF   16.67            1.002000E+03    1.000000E+03  181            
-          NF    1               1               1               1            
-          BR    1               1               1               1            
-          NR    1               1               1               1            
-         ISS    0               0               0               0            
-          RE    0               0               0               0            
-          RC    0               0               0               0            
-         CJE    0               0               0               0            
-         VJE     .75             .75             .75             .75         
-         CJC    0               0               1.000000E-15    1.000000E-15 
-         VJC     .75             .75             .75             .75         
-         MJC     .33             .33             .33             .33         
-        XCJC    1               1               1               1            
-         CJS    0               0               0               0            
-         VJS     .75             .75             .75             .75         
-          TF                                                   15.800000E-12 
-          TR                                    6.475000E-09    4.172000E-09 
-          KF    0               0               0               0            
-          AF    1               1               1               1            
-          CN    2.42            2.2             2.2             2.42         
-           D     .87             .52             .52             .87         
-
-
-**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     MOSFET MODEL PARAMETERS
-
-
-******************************************************************************
-
-
-
-
-               X_U8.PMOS       
-               PMOS            
-       LEVEL    1            
-           L  100.000000E-06 
-           W  100.000000E-06 
-         VTO    0            
-          KP   20.000000E-06 
-       GAMMA    0            
-         PHI     .6          
-      LAMBDA    0            
-          IS   10.000000E-15 
-          JS    0            
-          PB     .8          
-        PBSW     .8          
-          CJ    0            
-        CJSW    0            
-        CGSO    0            
-        CGDO    0            
-        CGBO    0            
-         TOX    0            
-          XJ    0            
-       UCRIT   10.000000E+03 
-      DIOMOD    1            
-         VFB    0            
-        LETA    0            
-        WETA    0            
-          U0    0            
-        TEMP    0            
-         VDD    5            
-       XPART    0            
-
-Reducing minimum delta to make the circuit converge.
-
 
           JOB CONCLUDED
 
-**** 11/15/24 16:04:14 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/17/24 18:25:49 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -255,6 +180,6 @@ Reducing minimum delta to make the circuit converge.
 
 
 
-  License check-out time            =      187.28
-  Total job time (using Solver 1)   =        5.34
+  License check-out time            =     3084.16
+  Total job time (using Solver 1)   =        3.80
 
