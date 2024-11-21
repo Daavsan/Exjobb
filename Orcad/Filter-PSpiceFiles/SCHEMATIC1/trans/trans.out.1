@@ -1,5 +1,5 @@
 
-**** 11/14/24 18:07:35 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/19/24 15:25:48 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-trans"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter-pspicefiles\schematic1\trans.sim ] 
 
@@ -23,7 +23,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 10u 0 0.1n 
+.TRAN  0 7u 0 0.1n 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -32,26 +32,50 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source FILTER
-L_L1         N14552 N14471  2u  
-R_R1         N14467 N14471  300 TC=0,0 
-R_R2         0 N14496  0.1 TC=0,0 
-L_L2         N14471 N14496  3u  
+L_L1         N14552 N14473  1u  
+R_Rdamp         N14467 N14473  200 TC=0,0 
+R_Rload         0 N14502  3 TC=0,0 
+L_L2         N14473 N46457  1.5u  
 C_C1         0 N14467  70p  TC=0,0 
-X_U3         N39180 0 VCC_ARROW VCC N39122 MAX4223/MXM
-R_R3         N38944 N39122  2.5k TC=0,0 
-V_V6         N39270 0  AC 0
-+SIN 0 15 0.1meg 0 0 0
-R_R4         N39180 N39122  2.5k TC=0,0 
-X_U4         N39270 N38954 VCC_ARROW VCC N14552 MAX4223/MXM
-V_V4         VCC_ARROW 0 15
-R_R5         N38954 N39180  1k TC=0,0 
-C_C2         N38944 N38954  2p  TC=0,0 
-V_V5         VCC 0 -15
-X_U1         0 N38944 VCC_ARROW VCC N38954 MAX4223/MXM
-R_R6         0 N42512  0.1 TC=0,0 
+V_V1         N14552 0  
++PULSE 0 60 0 3n 3n 14n 20n
+R_Rshunt         N46457 N49021  0.1 TC=0,0 
+V_V4         VCC_ARROW 0 30
+V_V5         VCC 0 -30
+R_R2         N49514 N46457  20k TC=0,0 
+R_R1         N49541 N49021  20k TC=0,0 
+R_R3         N49627 N49541  1k TC=0,0 
+R_R4         N49514 0  1k TC=0,0 
+X_U4         N49514 N49541 VCC_ARROW VCC N49627 AD8004AN/AD
+X_U6         0 N71363 VCC_ARROW VCC N71372 AD8004AN/AD
+R_R10         N71363 N71372  1meg TC=0,0 
+R_R11         N76028 N49021  10.001k TC=0,0 
+R_R12         N76024 N46457  9999 TC=0,0 
+R_R13         N76024 0  1000.1 TC=0,0 
+R_R14         N76176 N76028  999.9 TC=0,0 
+X_U7         N76024 N76028 VCC_ARROW VCC N76176 AD8004AN/AD
+R_Rshunt2         N82074 N82070  0.1 TC=0,0 
+R_R16         N82556 N82070  10.001k TC=0,0 
+R_R17         N82552 0  100010 TC=0,0 
+R_R18         N82696 N82556  99990 TC=0,0 
+X_U8         N82552 N82556 VCC_ARROW VCC N82696 AD8004AN/AD
+R_R15         N82552 N82074  9999 TC=0,0 
+R_R19         N84482 N82070  10k TC=0,0 
+R_R21         N84482 0  100k TC=0,0 
+R_R20         N84486 N82074  10k TC=0,0 
+X_U9         N84482 N84486 VCC_ARROW VCC N84620 AD8004AN/AD
+R_R22         N84620 N84486  100k TC=0,0 
+X_TX3    N82074 N82070 N49021 N14502 SCHEMATIC1_TX3 
+R_R23         N84620 N99224  0.1meg TC=0,0 
+
+.subckt SCHEMATIC1_TX3 1 2 3 4  
+K_TX3         L1_TX3 L2_TX3 1
+L1_TX3         1 2 1n
+L2_TX3         3 4 1n
+.ends SCHEMATIC1_TX3
 
 **** RESUMING trans.cir ****
 .END
 
-ERROR(ORPSIM-15141): Less than 2 connections at node N42512.
+ERROR(ORPSIM-15141): Less than 2 connections at node N99224.
 

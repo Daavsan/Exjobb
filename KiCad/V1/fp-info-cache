@@ -1,4 +1,4 @@
-23850011290638614
+23856940117236312
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -67297,6 +67297,34 @@ Mounting 4.5mm 9774100982
 0
 8
 1
+MyFootprints
+INductor_744060421
+
+
+0
+2
+2
+MyFootprints
+OPA859QDSGRQ1
+
+
+0
+9
+9
+MyFootprints
+POT_ 3214W-1-201E
+
+
+0
+3
+3
+MyFootprints
+TOMCT16031002ZT1
+
+
+0
+16
+16
 MyResistors
 EPC8009
 

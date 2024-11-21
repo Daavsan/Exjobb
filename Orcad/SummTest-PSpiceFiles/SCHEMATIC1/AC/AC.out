@@ -1,0 +1,197 @@
+
+**** 11/19/24 14:33:40 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\SummTest-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 2 0.1 500meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SUMMTEST
+V_V1         N52221 N44073  
++PULSE 0 60 0 3n 3n 6n 20n
+V_V2         N44073 0  AC 1
++SIN 0 30 10k 0 0 0
+V_V5         VCC 0 -30
+V_V4         VCC_ARROW 0 30
+R_R1         N52221 N52205  10k TC=0,0 
+R_R2         0 N52212  7k TC=0,0 
+C_C1         N52212 N52221  300p  TC=0,0 
+C_C2         N52205 0  300p  TC=0,0 
+X_U6         0 N71844 VCC_ARROW VCC N71812 AD8004AN/AD
+R_R9         N52205 N71844  1000k TC=0,0 
+R_R10         N71844 N71812  1000k TC=0,0 
+R_R11         N52212 N71844  1000k TC=0,0 
+
+**** RESUMING AC.cir ****
+.END
+
+**** 11/19/24 14:33:40 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\SummTest-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.d1         X_U6.dn         
+          IS   10.000000E-15   10.000000E-15 
+          KF                   10.000000E-09 
+
+
+**** 11/19/24 14:33:40 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\SummTest-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.qp1        X_U6.qn1        
+               PNP             NPN             
+       LEVEL    1               1            
+          IS  100.000000E-18  100.000000E-18 
+          BF  100             100            
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.2             2.42         
+           D     .52             .87         
+
+
+**** 11/19/24 14:33:40 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\SummTest-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)  -30.0000  (N44073)    0.0000 (N52205)-3.746E-06 (N52212)-2.630E-06     
+
+(N52221)    0.0000 (N71812)    7.8826 (N71844)-378.4E-06 (X_U6.3) 999.9E-06     
+
+(X_U6.4)-378.4E-06 (X_U6.5)     .7398 (X_U6.6)    -.7379 (X_U6.7)    7.8830     
+
+(X_U6.8)   28.2500 (X_U6.9)  -28.2500 (X_U6.10)    7.8826                       
+
+(X_U6.11)    7.1926                   (X_U6.12)    8.5726                       
+
+(X_U6.13)    7.8826                   (X_U6.14)    7.8830                       
+
+(X_U6.15)    7.8830                   (X_U6.19)    0.0000                       
+
+(X_U6.20)-52.06E-09                   (X_U6.21)     .4000                       
+
+(X_U6.22)    0.0000                   (X_U6.23)-66.52E-06                       
+
+(X_U6.24)     .5850                   (X_U6.26)    0.0000                       
+
+(X_U6.27)    0.0000                   (X_U6.30)-189.2E-06                       
+
+(X_U6.40)     .5478                   (X_U6.90)   30.0000                       
+
+(X_U6.91)  -30.0000                   (X_U6.98)    0.0000                       
+
+(VCC_ARROW)   30.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.746E-10
+    V_V2        -3.746E-10
+    V_V5         1.403E-02
+    V_V4        -1.407E-02
+    X_U6.v1      2.718E-05
+    X_U6.vcl1    2.038E-11
+    X_U6.vcl2    3.614E-11
+    X_U6.vnoise1   5.206E-08
+    X_U6.vnoise2  -5.206E-08
+    X_U6.vnoise3   6.652E-05
+    X_U6.vnoise4  -6.652E-05
+    X_U6.vcur1   1.577E-05
+    X_U6.vcur2  -5.578E-13
+    X_U6.vo1     6.073E-06
+    X_U6.vo2    -6.073E-06
+    X_U6.voc     1.577E-05
+    X_U6.vcl3    3.857E-03
+    X_U6.vcl4    3.853E-03
+
+    TOTAL POWER DISSIPATION   8.48E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/19/24 14:33:40 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\SummTest-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       89.45
+  Total job time (using Solver 1)   =         .05
+
