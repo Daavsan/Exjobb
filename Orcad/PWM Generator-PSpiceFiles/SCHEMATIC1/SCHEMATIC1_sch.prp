@@ -111,7 +111,7 @@
             ("level"	"0")
             ("model_params"
                 ("DC"
-                    ("value"	"4")
+                    ("value"	"2")
                     ("pspice_param"	"DC")
                 )
                 ("BiasValue Power"
@@ -130,7 +130,7 @@
             ("level"	"0")
             ("model_params"
                 ("DC"
-                    ("value"	"-1")
+                    ("value"	"-2")
                     ("pspice_param"	"DC")
                 )
                 ("BiasValue Power"
@@ -277,17 +277,17 @@
                     ("value"	"0")
                     ("pspice_param"	"AC")
                 )
-                ("FREQ"
-                    ("value"	"5meg")
-                    ("pspice_param"	"FREQ")
+                ("VAMPL"
+                    ("value"	"0.5")
+                    ("pspice_param"	"VAMPL")
                 )
                 ("VOFF"
                     ("value"	"0")
                     ("pspice_param"	"VOFF")
                 )
-                ("VAMPL"
-                    ("value"	"50m")
-                    ("pspice_param"	"VAMPL")
+                ("FREQ"
+                    ("value"	"5meg")
+                    ("pspice_param"	"FREQ")
                 )
                 ("PHASE"
                     ("value"	"0")
@@ -508,17 +508,17 @@
                     ("value"	"0")
                     ("pspice_param"	"AC")
                 )
-                ("VAMPL"
-                    ("value"	"30m")
-                    ("pspice_param"	"VAMPL")
-                )
-                ("VOFF"
-                    ("value"	"2")
-                    ("pspice_param"	"VOFF")
-                )
                 ("FREQ"
                     ("value"	"50meg")
                     ("pspice_param"	"FREQ")
+                )
+                ("VOFF"
+                    ("value"	"0")
+                    ("pspice_param"	"VOFF")
+                )
+                ("VAMPL"
+                    ("value"	"30m")
+                    ("pspice_param"	"VAMPL")
                 )
                 ("PHASE"
                     ("value"	"0")
@@ -535,6 +535,44 @@
                 ("DC"
                     ("value"	"")
                     ("pspice_param"	"DC")
+                )
+                ("PSpice Model Type"
+                    ("value"	"0011")
+                    ("pspice_param"	"PSpice Model Type")
+                )
+            )
+        )
+        ("V8"
+            ("device_name"	"VDC")
+            ("pspice_path"	"V_V8")
+            ("level"	"0")
+            ("model_params"
+                ("DC"
+                    ("value"	"-1")
+                    ("pspice_param"	"DC")
+                )
+                ("BiasValue Power"
+                    ("value"	"-81.91mW")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("PSpice Model Type"
+                    ("value"	"0011")
+                    ("pspice_param"	"PSpice Model Type")
+                )
+            )
+        )
+        ("V9"
+            ("device_name"	"VDC")
+            ("pspice_path"	"V_V9")
+            ("level"	"0")
+            ("model_params"
+                ("DC"
+                    ("value"	"5")
+                    ("pspice_param"	"DC")
+                )
+                ("BiasValue Power"
+                    ("value"	"-141.9mW")
+                    ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
                     ("value"	"0011")
