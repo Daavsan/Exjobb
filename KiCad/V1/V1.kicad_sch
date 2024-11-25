@@ -5678,7 +5678,7 @@
 	)
 	(wire
 		(pts
-			(xy 320.04 175.26) (xy 320.04 179.07)
+			(xy 320.04 175.26) (xy 320.04 180.34)
 		)
 		(stroke
 			(width 0)
@@ -6418,7 +6418,7 @@
 	)
 	(wire
 		(pts
-			(xy 298.45 39.37) (xy 304.8 39.37)
+			(xy 294.64 39.37) (xy 304.8 39.37)
 		)
 		(stroke
 			(width 0)
@@ -6788,6 +6788,16 @@
 	)
 	(wire
 		(pts
+			(xy 320.04 172.72) (xy 320.04 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9840151f-5ef9-4b77-a96a-a6b0ae32a4b9")
+	)
+	(wire
+		(pts
 			(xy 120.65 138.43) (xy 120.65 135.89)
 		)
 		(stroke
@@ -7055,6 +7065,16 @@
 			(type default)
 		)
 		(uuid "b3820880-f6be-462c-87b7-6c403261d55a")
+	)
+	(wire
+		(pts
+			(xy 327.66 172.72) (xy 327.66 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3f2b555-0a2a-444f-9931-2649f4e499e8")
 	)
 	(wire
 		(pts
@@ -7858,7 +7878,7 @@
 	)
 	(wire
 		(pts
-			(xy 327.66 175.26) (xy 327.66 179.07)
+			(xy 327.66 175.26) (xy 327.66 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8511,7 +8531,7 @@
 		(uuid "9e5a1180-ad1c-43b1-aaf9-c7bc3238e9e5")
 	)
 	(label "V_diffsense"
-		(at 298.45 39.37 0)
+		(at 294.64 39.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8609,7 +8629,7 @@
 		)
 		(uuid "d5cd86db-42ca-4901-84b1-c18065147ce0")
 	)
-	(label "OUT"
+	(label "+I_OUT"
 		(at 101.6 26.67 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9894,7 +9914,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "18986edc-4fa1-4bcc-a5b8-7cace961b5ed")
-		(property "Reference" "EN1"
+		(property "Reference" "EN1_coax1"
 			(at 339.09 67.6031 0)
 			(effects
 				(font
@@ -9975,7 +9995,7 @@
 		(instances
 			(project "V1"
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
-					(reference "EN1")
+					(reference "EN1_coax1")
 					(unit 1)
 				)
 			)
@@ -10890,7 +10910,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3072db75-6d1a-49eb-8d77-a1db85fc226c")
-		(property "Reference" "PWM_External"
+		(property "Reference" "PWM_External1"
 			(at 337.82 35.8531 0)
 			(effects
 				(font
@@ -10971,7 +10991,7 @@
 		(instances
 			(project ""
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
-					(reference "PWM_External")
+					(reference "PWM_External1")
 					(unit 1)
 				)
 			)
@@ -10992,7 +11012,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30b792e6-e4ac-4537-bdf6-0678cc4abdc6")
-		(property "Reference" "Pre_FilterV_duffsense"
+		(property "Reference" "V_duffsense1"
 			(at 312.166 40.894 0)
 			(effects
 				(font
@@ -11073,7 +11093,7 @@
 		(instances
 			(project "V1"
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
-					(reference "Pre_FilterV_duffsense")
+					(reference "V_duffsense1")
 					(unit 1)
 				)
 			)
@@ -11882,6 +11902,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 389.89 55.88 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4530df47-ce12-4459-a848-22951378dd21")
+		(property "Reference" "#PWR020"
+			(at 383.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 386.08 55.8799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 389.89 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 389.89 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 389.89 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "84dfbbac-cd8f-43bd-8233-6b3708d05b1a")
+		)
+		(instances
+			(project "V1"
+				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 95.25 223.52 180)
 		(unit 1)
@@ -12398,7 +12485,7 @@
 	(symbol
 		(lib_name "D_Schottky_2")
 		(lib_id "Device:D_Schottky")
-		(at 323.85 179.07 180)
+		(at 323.85 180.34 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12407,7 +12494,7 @@
 		(fields_autoplaced yes)
 		(uuid "52ce3778-6a58-4486-823f-ff99365e106e")
 		(property "Reference" "D2"
-			(at 324.1675 172.72 0)
+			(at 324.1675 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12415,7 +12502,7 @@
 			)
 		)
 		(property "Value" "D_Schottky"
-			(at 324.1675 175.26 0)
+			(at 324.1675 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12423,7 +12510,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 323.596 182.372 0)
+			(at 323.596 183.642 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12432,7 +12519,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 323.85 179.07 0)
+			(at 323.85 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12441,7 +12528,7 @@
 			)
 		)
 		(property "Description" "Schottky diode"
-			(at 323.85 181.102 0)
+			(at 323.85 182.372 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12450,7 +12537,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 323.85 179.07 0)
+			(at 323.85 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12459,7 +12546,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 323.85 179.07 0)
+			(at 323.85 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12468,7 +12555,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 323.85 179.07 0)
+			(at 323.85 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14357,17 +14444,15 @@
 	)
 	(symbol
 		(lib_id "Device:Transformer_1P_1S")
-		(at 67.31 60.96 90)
-		(mirror x)
+		(at 67.31 60.96 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "85bdfd7e-2f3a-4940-a5d9-334fe0366a82")
 		(property "Reference" "T1"
-			(at 73.66 59.7026 90)
+			(at 60.96 59.7026 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14376,7 +14461,7 @@
 			)
 		)
 		(property "Value" "Transformer_1P_1S"
-			(at 73.66 62.2426 90)
+			(at 60.96 62.2426 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14384,7 +14469,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MyFootprints:MyTransformer"
 			(at 67.31 60.96 0)
 			(effects
 				(font
@@ -15039,7 +15124,7 @@
 	(symbol
 		(lib_name "D_Schottky_1")
 		(lib_id "Device:D_Schottky")
-		(at 323.85 175.26 180)
+		(at 323.85 172.72 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15048,7 +15133,7 @@
 		(fields_autoplaced yes)
 		(uuid "987e9411-07ea-4b15-83b7-145300063bae")
 		(property "Reference" "D1"
-			(at 324.1675 168.91 0)
+			(at 324.1675 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15056,7 +15141,7 @@
 			)
 		)
 		(property "Value" "D_Schottky"
-			(at 324.1675 171.45 0)
+			(at 324.1675 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15064,7 +15149,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 323.596 178.562 0)
+			(at 323.596 176.022 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15073,7 +15158,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 323.85 175.26 0)
+			(at 323.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15082,7 +15167,7 @@
 			)
 		)
 		(property "Description" "Schottky diode"
-			(at 323.85 177.292 0)
+			(at 323.85 174.752 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15091,7 +15176,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 323.85 175.26 0)
+			(at 323.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15100,7 +15185,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 323.85 175.26 0)
+			(at 323.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15109,7 +15194,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 323.85 175.26 0)
+			(at 323.85 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15765,105 +15850,6 @@
 			(project "V1"
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 229.87 219.71 180)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "a79fbe7a-9379-4895-8bd6-44d5a38ef246")
-		(property "Reference" "EN1"
-			(at 232.41 219.7099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 232.41 222.2499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.5mm_Drill1.2mm"
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 229.87 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "32d9db0b-e5fb-4a9b-9d64-ab6f87dd2ad6")
-		)
-		(instances
-			(project ""
-				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
-					(reference "EN1")
-					(unit 1)
-				)
-			)
-			(project "MosTest"
-				(path "/e10a9314-4860-4bd8-b877-dab830b8ef59"
-					(reference "EN1")
 					(unit 1)
 				)
 			)
@@ -17629,7 +17615,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cfb7d264-4996-4a00-8179-05f31ab069f9")
-		(property "Reference" "Pre_FilterV_ref"
+		(property "Reference" "Pre_FilterV_ref1"
 			(at 307.34 15.494 0)
 			(effects
 				(font
@@ -17710,7 +17696,7 @@
 		(instances
 			(project "V1"
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
-					(reference "Pre_FilterV_ref")
+					(reference "Pre_FilterV_ref1")
 					(unit 1)
 				)
 			)
