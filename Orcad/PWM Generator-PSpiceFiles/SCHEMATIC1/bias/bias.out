@@ -1,5 +1,5 @@
 
-**** 11/22/24 12:24:39 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -38,9 +38,9 @@ V_V4         VCC_ARROW 0 2
 V_V5         VCC 0 -2
 C_C1         N36794 N36505  30p  TC=0,0 
 R_R3         N36505 N36490  150 TC=0,0 
-X_U4         N75044 N36505 VCC+4 VCC-1 N38449 MAX4223/MXM
+X_U4         N75044 N107109 VCC+4 VCC-1 N38449 MAX4223/MXM
 V_V6         N38350 N38365  AC 0
-+SIN 0 0.5 5meg 0 0 0
++SIN 0 2 5meg 0 0 0
 X_U5         0 N36794 VCC_ARROW VCC N36505 AD8009an/AD
 X_U6         N36490 0 VCC_ARROW VCC N36818 AD8009an/AD
 R_R6         N604671 VCC_ARROW  0.1 TC=0,0 
@@ -51,11 +51,12 @@ V_V7         N38365 0  AC 0
 +SIN 0 30m 50meg 0 0 0
 V_V8         VCC-1 0 -1
 V_V9         VCC+4 0 5
+R_R10         N107109 N36505  150 TC=0,0 
 
 **** RESUMING bias.cir ****
 .END
 
-**** 11/22/24 12:24:39 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -80,7 +81,7 @@ V_V9         VCC+4 0 5
           KF   10.000000E-09                   10.000000E-09 
 
 
-**** 11/22/24 12:24:39 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -172,7 +173,7 @@ V_V9         VCC+4 0 5
 
           JOB CONCLUDED
 
-**** 11/22/24 12:24:39 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -184,6 +185,6 @@ V_V9         VCC+4 0 5
 
 
 
-  License check-out time            =     3340.25
-  Total job time (using Solver 1)   =        4.16
+  License check-out time            =     3474.67
+  Total job time (using Solver 1)   =        3.42
 
