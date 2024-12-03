@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "High pressision mesurments.md",
+                "file": "Current generator deign.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "High pressision mesurments"
+              "title": "Current generator deign"
             }
           }
         ],
@@ -193,6 +193,8 @@
   },
   "active": "29bc6dcc4e558552",
   "lastOpenFiles": [
+    "High pressision mesurments.md",
+    "SyncronusBuck.png",
     "Current generator deign.md",
     "Amplifers.md",
     "ADC and DAC.md",
@@ -203,7 +205,6 @@
     "switching mosfet  and gatedriver test.md",
     "Berring Currents.md",
     "test here.md",
-    "High pressision mesurments.md",
     "Mosfet.md",
     "Links.md",
     "PWM Generation.md",

@@ -96,15 +96,5 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 852"))
-      (Tab 0))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 0 0 5 946 24 893")
-        (Scroll "0 3")
-        (Zoom "118")
-        (Occurrence "/"))
-      (Path "C:\USERS\A1201-ADMIN\DOCUMENTS\EXJOBB\ORCAD\FILTER TEST.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))))
+        (Placement "44 0 1 -1 -1 -1 -1 0 50 0 852"))
+      (Tab 0))))

@@ -22,8 +22,8 @@ ntransistors=2
 
 linethickness = 2; % Line thickness option
 textscale = 1.5; % Text and legend scale option
-tr = 1E-9;
-tf = 1E-9;
+tr = 3E-9;
+tf = 3E-9;
 tcross = tr + tf;
 RDS = 90E-3;
 Qg = 370e-12;
