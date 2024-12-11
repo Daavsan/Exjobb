@@ -18,6 +18,8 @@ GanMinPW = "GanFetPreFilter";
 DiffHighVgs = "DiffHighVgs";
 DiffGanVoLowVgs = "DiffGanVoLowVgs";
 DiffGanVoHighVgs = "DiffGanVoHighVgs";
+PWMtriang = "PWMGen-tri-prefilt";
+PWMSquare = "PWMGen-square-prefilt" ;
 
 linethickness = 3; % Line thickness option
 textscale = 5; % Text and legend scale option
@@ -48,7 +50,7 @@ OscilloscopePlotter(LowGD, timeUnit, 'titlename', "Low RFFet")
 legend('Drain', 'Gate');
 
 figure;
-OscilloscopePlotter(NoFet, timeUnit, 'titlename', "No fet")
+OscilloscopePlotter(NoFet, timeUnit, 'titlename', "Gate Driver Output")
 
 figure;
 OscilloscopePlotter(rfmin, timeUnit)
@@ -80,3 +82,10 @@ OscilloscopePlotter(DiffGanVoHighVgs, timeUnit,'rescale2factor',[rescalefactor,1
 legend('Vo','Vgs')
 
 
+figure;
+tiledlayout(2,1)
+nexttile;
+OscilloscopePlotter(PWMtriang,timeUnit,rescale2factor,[rescalefactor,1]);
+legend('Pre_filter','truab');
+nexttile;
+OscilloscopePlotter(PWMtriang,timeUnit,rescale2factor,[rescalefactor,1]);
