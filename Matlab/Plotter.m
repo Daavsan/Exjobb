@@ -20,6 +20,7 @@ DiffGanVoLowVgs = "DiffGanVoLowVgs";
 DiffGanVoHighVgs = "DiffGanVoHighVgs";
 PWMtriang = "PWMGen-tri-prefilt";
 PWMSquare = "PWMGen-sqare-prefilt" ;
+PWMpwm = 'PWMGen-pwm-prefilt';
 
 linethickness = 3; % Line thickness option
 textscale = 5; % Text and legend scale option
@@ -83,10 +84,13 @@ legend('Vo','Vgs')
 
 
 figure;
-tiledlayout(2,1)
+tiledlayout(3,1)
 nexttile;
 OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,1]);
 legend('Pre filter','tirangle');
 nexttile;
 OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[rescalefactor,1]);
 legend('Pre filter','square');
+nexttile;
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[rescalefactor,1]);
+legend('Pre filter','PWN Generator');
