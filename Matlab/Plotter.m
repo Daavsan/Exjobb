@@ -19,8 +19,8 @@ DiffHighVgs = "DiffHighVgs";
 DiffGanVoLowVgs = "DiffGanVoLowVgs";
 DiffGanVoHighVgs = "DiffGanVoHighVgs";
 
-linethickness = 2; % Line thickness option
-textscale = 1.5; % Text and legend scale option
+linethickness = 3; % Line thickness option
+textscale = 5; % Text and legend scale option
 timeUnit = "ns";
 
 figure;
@@ -48,7 +48,7 @@ OscilloscopePlotter(LowGD, timeUnit, 'titlename', "Low RFFet")
 legend('Drain', 'Gate');
 
 figure;
-OscilloscopePlotter(NoFet, timeUnit, 'titlename', "No fet")
+OscilloscopePlotter(NoFet, timeUnit, 'titlename', "Gate Driver Output")
 
 figure;
 OscilloscopePlotter(rfmin, timeUnit)

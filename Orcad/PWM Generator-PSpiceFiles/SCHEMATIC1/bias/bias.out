@@ -1,5 +1,5 @@
 
-**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 12/11/24 11:51:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -56,7 +56,7 @@ R_R10         N107109 N36505  150 TC=0,0
 **** RESUMING bias.cir ****
 .END
 
-**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 12/11/24 11:51:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -81,7 +81,7 @@ R_R10         N107109 N36505  150 TC=0,0
           KF   10.000000E-09                   10.000000E-09 
 
 
-**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 12/11/24 11:51:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -173,7 +173,7 @@ R_R10         N107109 N36505  150 TC=0,0
 
           JOB CONCLUDED
 
-**** 11/25/24 09:58:30 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+**** 12/11/24 11:51:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\pwm generator-pspicefiles\schematic1\bias.sim ] 
 
@@ -185,6 +185,6 @@ R_R10         N107109 N36505  150 TC=0,0
 
 
 
-  License check-out time            =     3474.67
-  Total job time (using Solver 1)   =        3.42
+  License check-out time            =     3562.75
+  Total job time (using Solver 1)   =        3.47
 
