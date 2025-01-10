@@ -5097,6 +5097,12 @@
 		(uuid "7331b052-3151-49fb-913e-5bf2f8160b81")
 	)
 	(junction
+		(at 54.61 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77fee00c-ba6a-431e-8e7b-c5fa04195c28")
+	)
+	(junction
 		(at 95.25 217.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5155,6 +5161,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9974ba4a-9c30-49f6-bfa3-273be04a6222")
+	)
+	(junction
+		(at 71.12 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9c2ae871-ed93-4ec1-bffd-d5a4503f4673")
 	)
 	(junction
 		(at 156.21 74.93)
@@ -5828,7 +5840,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 115.57) (xy 73.66 115.57)
+			(xy 44.45 115.57) (xy 54.61 115.57)
 		)
 		(stroke
 			(width 0)
@@ -6588,6 +6600,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 90.17) (xy 71.12 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6da58874-43a0-47ec-be62-7518fe7d7f8d")
+	)
+	(wire
+		(pts
 			(xy 74.93 217.17) (xy 85.09 217.17)
 		)
 		(stroke
@@ -6758,6 +6780,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 99.06) (xy 54.61 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77f17010-4a62-4f5a-87a1-07a28e11ed11")
+	)
+	(wire
+		(pts
 			(xy 48.26 71.12) (xy 48.26 74.93)
 		)
 		(stroke
@@ -6835,6 +6867,16 @@
 			(type default)
 		)
 		(uuid "7c1579aa-94e0-4db6-9735-d2d368c0f98f")
+	)
+	(wire
+		(pts
+			(xy 71.12 90.17) (xy 71.12 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c89d045-6649-4213-8281-154df5752ea3")
 	)
 	(wire
 		(pts
@@ -7228,6 +7270,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 106.68) (xy 54.61 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c4daa50-5a4d-42ed-9637-2932b88e7d3a")
+	)
+	(wire
+		(pts
 			(xy 138.43 189.23) (xy 140.97 189.23)
 		)
 		(stroke
@@ -7305,6 +7357,16 @@
 			(type default)
 		)
 		(uuid "a2edf0ea-f963-4bcd-809c-b198d8f75994")
+	)
+	(wire
+		(pts
+			(xy 54.61 115.57) (xy 73.66 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a46023e8-0e3c-4d4f-875d-20d32c564c23")
 	)
 	(wire
 		(pts
@@ -8683,7 +8745,7 @@
 	)
 	(rectangle
 		(start 22.86 22.86)
-		(end 293.37 86.36)
+		(end 266.7 86.36)
 		(stroke
 			(width 0)
 			(type default)
@@ -10645,6 +10707,74 @@
 			(project "V1"
 				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 54.61 102.87 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(uuid "238f8edf-0ac2-401f-b5c2-52fdbf7f1445")
+		(property "Reference" "R19"
+			(at 49.022 104.648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "0"
+			(at 51.562 104.648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 56.388 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 54.61 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11113a7a-4696-48df-ad99-de70f780fbe1")
+		)
+		(pin "2"
+			(uuid "5d16c453-1300-45cf-8ea4-432fad18763f")
+		)
+		(instances
+			(project "V1"
+				(path "/009e4554-048b-4d13-979d-7fdd312db04d"
+					(reference "R19")
 					(unit 1)
 				)
 			)
