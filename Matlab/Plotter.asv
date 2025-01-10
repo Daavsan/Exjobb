@@ -20,24 +20,23 @@ DiffGanVoLowVgs = "DiffGanVoLowVgs";
 DiffGanVoHighVgs = "DiffGanVoHighVgs";
 PWMtriang = "PWMGen-tri-prefilt";
 PWMSquare = "PWMGen-sqare-prefilt" ;
+PWMpwm = 'PWMGen-pwm-prefilt';
 
-
-linethickness = 3; % Line thickness option
-textscale = 5; % Text and legend scale option
+linethickness = 2; % Line thickness option
+textscale = 1.5; % Text and legend scale option
 timeUnit = "ns";
 
 figure;
-tiledlayout(2, 2);
+tiledlayout(2, 1);
 nexttile;
 OscilloscopePlotter(dt05, timeUnit, 'titlename', "0.5ns Deadtime", 'linethickness', linethickness, 'textscale', textscale)
 legend('High Gate', 'Low Gate');
 nexttile;
+
 OscilloscopePlotter(x1diode, timeUnit, 'titlename', "1 Diode")
 legend('Diode Voltage drop', 'VS')
 nexttile;
-OscilloscopePlotter(dt3, timeUnit, 'titlename', "3ns Deadtime", 'linethickness', linethickness, 'textscale', textscale)
-legend('Low Gate', 'High Gate');
-nexttile;
+
 OscilloscopePlotter(x2diode, timeUnit)
 legend('Diode Voltage drop', 'VS')
 
@@ -84,10 +83,13 @@ legend('Vo','Vgs')
 
 
 figure;
-tiledlayout(2,1)
+tiledlayout(3,1)
 nexttile;
 OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,1]);
 legend('Pre filter','tirangle');
 nexttile;
 OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[rescalefactor,1]);
 legend('Pre filter','square');
+nexttile;
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[rescalefactor,1]);
+legend('Pre filter','PWN Generator');

@@ -1,11 +1,11 @@
 * source FILTER
-L_L1         N14552 N14473  1u  
+L_L1         N14552 N14473  0.96u  
 R_Rdamp         N14467 N14473  200 TC=0,0 
 R_Rload         0 N14502  100 TC=0,0 
-L_L2         N14473 N46457  1.5u  
+L_L2         N14473 N46457  1.7u  
 C_C1         0 N14467  70p  TC=0,0 
-V_V1         N115569 0  
-+PULSE 0 30 0 3n 3n 14n 20n
+V_V1         N14552 0  
++PULSE 0 30 0 3n 3n 25n 50n
 R_Rshunt         N46457 N49021  0.1 TC=0,0 
 V_V4         VCC_ARROW 0 30
 V_V5         VCC 0 -30
@@ -31,8 +31,6 @@ X_TX3    N82074 N82070 N49021 N14502 SCHEMATIC1_TX3
 R_R23         N84620 N71363  100 TC=0,0 
 V_V6         VCC-1 0 1
 R_R24         VCC-1 N71363  100 TC=0,0 
-V_V7         N14552 N115569  AC 0
-+SIN 0 10 5meg 0 0 0
 
 .subckt SCHEMATIC1_TX3 1 2 3 4  
 K_TX3         L1_TX3 L2_TX3 0.99

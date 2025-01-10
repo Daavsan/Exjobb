@@ -7,7 +7,6 @@
         ("VDC")
         ("AD8004AN/AD")
         ("XFRM_LINEAR")
-        ("VSIN")
     )
     ("instances"
         ("L1"
@@ -16,7 +15,7 @@
             ("level"	"0")
             ("model_params"
                 ("VALUE"
-                    ("value"	"1u")
+                    ("value"	"0.96u")
                     ("pspice_param"	"VALUE")
                 )
                 ("BiasValue Power"
@@ -173,7 +172,7 @@
             ("level"	"0")
             ("model_params"
                 ("VALUE"
-                    ("value"	"1.5u")
+                    ("value"	"1.7u")
                     ("pspice_param"	"VALUE")
                 )
                 ("BiasValue Power"
@@ -291,7 +290,7 @@
             ("level"	"0")
             ("model_params"
                 ("PW"
-                    ("value"	"14n")
+                    ("value"	"25n")
                     ("pspice_param"	"PW")
                 )
                 ("TR"
@@ -315,7 +314,7 @@
                     ("pspice_param"	"TF")
                 )
                 ("PER"
-                    ("value"	"20n")
+                    ("value"	"50n")
                     ("pspice_param"	"PER")
                 )
                 ("BiasValue Power"
@@ -397,7 +396,7 @@
                     ("pspice_param"	"DC")
                 )
                 ("BiasValue Power"
-                    ("value"	"-2.002W")
+                    ("value"	"-1.687W")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -416,7 +415,7 @@
                     ("pspice_param"	"DC")
                 )
                 ("BiasValue Power"
-                    ("value"	"-1.698W")
+                    ("value"	"-1.982W")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -646,7 +645,7 @@
             ("level"	"0")
             ("model_params"
                 ("BiasValue Power"
-                    ("value"	"1.147W")
+                    ("value"	"1.118W")
                     ("pspice_param"	"BiasValue Power")
                 )
             )
@@ -661,7 +660,7 @@
                     ("pspice_param"	"VALUE")
                 )
                 ("BiasValue Power"
-                    ("value"	"11.04mW")
+                    ("value"	"8.980mW")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -1127,7 +1126,7 @@
             ("level"	"0")
             ("model_params"
                 ("BiasValue Power"
-                    ("value"	"855.3mW")
+                    ("value"	"855.5mW")
                     ("pspice_param"	"BiasValue Power")
                 )
             )
@@ -1220,7 +1219,7 @@
                     ("pspice_param"	"VALUE")
                 )
                 ("BiasValue Power"
-                    ("value"	"21.91uW")
+                    ("value"	"22.32uW")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -1271,7 +1270,7 @@
                     ("pspice_param"	"DC")
                 )
                 ("BiasValue Power"
-                    ("value"	"-10.01mW")
+                    ("value"	"-9.988mW")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -1290,7 +1289,7 @@
                     ("pspice_param"	"VALUE")
                 )
                 ("BiasValue Power"
-                    ("value"	"10.02mW")
+                    ("value"	"9.976mW")
                     ("pspice_param"	"BiasValue Power")
                 )
                 ("PSpice Model Type"
@@ -1328,53 +1327,6 @@
                 ("DIST"
                     ("value"	"FLAT")
                     ("pspice_param"	"DIST")
-                )
-            )
-        )
-        ("V7"
-            ("device_name"	"VSIN")
-            ("pspice_path"	"V_V7")
-            ("level"	"0")
-            ("model_params"
-                ("AC"
-                    ("value"	"0")
-                    ("pspice_param"	"AC")
-                )
-                ("BiasValue Power"
-                    ("value"	"0W")
-                    ("pspice_param"	"BiasValue Power")
-                )
-                ("VAMPL"
-                    ("value"	"10")
-                    ("pspice_param"	"VAMPL")
-                )
-                ("VOFF"
-                    ("value"	"0")
-                    ("pspice_param"	"VOFF")
-                )
-                ("FREQ"
-                    ("value"	"5meg")
-                    ("pspice_param"	"FREQ")
-                )
-                ("PSpice Model Type"
-                    ("value"	"0011")
-                    ("pspice_param"	"PSpice Model Type")
-                )
-                ("DC"
-                    ("value"	"")
-                    ("pspice_param"	"DC")
-                )
-                ("TD"
-                    ("value"	"0")
-                    ("pspice_param"	"TD")
-                )
-                ("DF"
-                    ("value"	"0")
-                    ("pspice_param"	"DF")
-                )
-                ("PHASE"
-                    ("value"	"0")
-                    ("pspice_param"	"PHASE")
                 )
             )
         )
