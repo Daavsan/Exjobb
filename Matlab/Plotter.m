@@ -21,6 +21,11 @@ DiffGanVoHighVgs = "DiffGanVoHighVgs";
 PWMtriang = "PWMGen-tri-prefilt";
 PWMSquare = "PWMGen-sqare-prefilt" ;
 PWMpwm = 'PWMGen-pwm-prefilt';
+FilterFFT = 'prefilt-in-post-out-fft';
+Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
+Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
+vdiff_Vout = 'vdiff-vout-fsw30M330ohm32v50%';
+
 
 linethickness = 2; % Line thickness option
 textscale = 2.3; % Text and legend scale option
@@ -101,3 +106,21 @@ legend('Pre filter','square');
 nexttile;
 OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
 legend('Pre filter','PWN Generator');
+
+
+
+figure;
+OscilloscopePlotter(Vdiff_probe_VS_Direct,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
+figure;
+OscilloscopePlotter(Vdiff_shunt,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
+figure;
+OscilloscopePlotter(vdiff_Vout,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
+
+
+% FilterFFT = 'prefilt-in-post-out-fft';
+% Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
+% Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
+% vdiff-Vout = 
