@@ -1,0 +1,444 @@
+
+**** 01/22/25 17:06:29 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\A1201-admin\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\A1201-admin\Documents\Exjobb\Orcad\lmg1210.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 1 100meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FILTER
+L_L1         N14552 N14473  1u  
+R_Rdamp         N14467 N14473  200 TC=0,0 
+R_Rload         0 N14502  1 TC=0,0 
+L_L2         N14473 N46457  1.5u  
+C_C1         0 N14467  70p  TC=0,0 
+V_V1         N111436 0  
++PULSE 0 30 0 3n 3n 14n 20n
+V_V4         VCC_ARROW 0 30
+V_V5         VCC 0 -30
+R_R2         N49514 N52818  20k TC=0,0 
+R_R1         N49541 N52822  20k TC=0,0 
+R_R3         N49627 N49541  1k TC=0,0 
+R_R4         N49514 0  1k TC=0,0 
+X_U4         N49514 N49541 VCC_ARROW VCC N49627 AD8004AN/AD
+X_U6         0 N71363 VCC_ARROW VCC N71372 AD8004AN/AD
+R_R10         N71363 N71372  1meg TC=0,0 
+R_R11         N76028 N52822  10.001k TC=0,0 
+R_R12         N76024 N52818  9999 TC=0,0 
+R_R13         N76024 0  1000.1 TC=0,0 
+R_R14         N76176 N76028  999.9 TC=0,0 
+X_U7         N76024 N76028 VCC_ARROW VCC N76176 AD8004AN/AD
+R_Rshunt2         N82074 0  0.1 TC=0,0 
+R_R16         N82556 N95680  10.001k TC=0,0 
+R_R17         N82552 0  100010 TC=0,0 
+R_R18         N82696 N82556  99990 TC=0,0 
+X_U8         N82552 N82556 VCC_ARROW VCC N82696 AD8004AN/AD
+R_R15         N82552 N82470  9999 TC=0,0 
+R_R19         N84482 N95680  10k TC=0,0 
+R_R21         N84482 0  100k TC=0,0 
+R_R20         N84486 N82470  10k TC=0,0 
+X_U9         N84482 N84486 VCC_ARROW VCC N84620 AD8004AN/AD
+R_R22         N84620 N84486  100k TC=0,0 
+X_TX3    N82074 0 N46457 N14502 SCHEMATIC1_TX3 
+R_R23         N84620 N71363  1meg TC=0,0 
+R_R24         VCC-1 N71363  1meg TC=0,0 
+V_V6         VCC-1 0 -1
+V_V7         N14552 0 DC 0Vdc AC 1Vac 
+R_Rdamp1         0 N111436  200 TC=0,0 
+
+.subckt SCHEMATIC1_TX3 1 2 3 4  
+K_TX3         L1_TX3 L2_TX3 0.99
+L1_TX3         1 2 1n
+L2_TX3         3 4 1n
+.ends SCHEMATIC1_TX3
+
+**** RESUMING AC.cir ****
+.END
+
+**** 01/22/25 17:06:29 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.d1         X_U4.dn         X_U6.d1         X_U6.dn         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          KF                   10.000000E-09                   10.000000E-09 
+
+
+               X_U7.d1         X_U7.dn         X_U8.d1         X_U8.dn         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          KF                   10.000000E-09                   10.000000E-09 
+
+
+               X_U9.d1         X_U9.dn         
+          IS   10.000000E-15   10.000000E-15 
+          KF                   10.000000E-09 
+
+
+**** 01/22/25 17:06:29 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.qp1        X_U4.qn1        X_U6.qp1        X_U6.qn1        
+               PNP             NPN             PNP             NPN             
+       LEVEL    1               1               1               1            
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.2             2.42            2.2             2.42         
+           D     .52             .87             .52             .87         
+
+
+               X_U7.qp1        X_U7.qn1        X_U8.qp1        X_U8.qn1        
+               PNP             NPN             PNP             NPN             
+       LEVEL    1               1               1               1            
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          BF  100             100             100             100            
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.2             2.42            2.2             2.42         
+           D     .52             .87             .52             .87         
+
+
+               X_U9.qp1        X_U9.qn1        
+               PNP             NPN             
+       LEVEL    1               1            
+          IS  100.000000E-18  100.000000E-18 
+          BF  100             100            
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.2             2.42         
+           D     .52             .87         
+
+
+**** 01/22/25 17:06:29 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)  -30.0000  (VCC-1)   -1.0000  (N14467)    0.0000 (N14473)    0.0000     
+
+(N14502)    0.0000 (N14552)    0.0000 (N46457)    0.0000 (N49514)    -.0401     
+
+(N49541)    -.0391 (N49627)    -.0040 (N52818)    -.0401 (N52822)    -.0391     
+
+(N71363)-431.9E-06 (N71372)    8.1891 (N76024)    -.0401 (N76028)    -.0391     
+
+(N76176)    -.0040 (N82074)    0.0000 (N82470)   -4.0010 (N82552)   -4.0015     
+
+(N82556)   -4.0005 (N82696)    -.3639 (N84482)   -4.0015 (N84486)   -4.0004     
+
+(N84620)    -.3633 (N95680)   -4.0010 (X_U4.3)    -.0391 (X_U4.4)    -.0391     
+
+(X_U4.5)     .6998 (X_U4.6)    -.7779 (X_U4.7)    -.0032 (X_U4.8)   28.2500     
+
+(X_U4.9)  -28.2500 (X_U6.3) 999.9E-06 (X_U6.4)-431.9E-06 (X_U6.5)     .7398     
+
+(X_U6.6)    -.7379 (X_U6.7)    8.1894 (X_U6.8)   28.2500 (X_U6.9)  -28.2500     
+
+(X_U7.3)    -.0391 (X_U7.4)    -.0391 (X_U7.5)     .6998 (X_U7.6)    -.7779     
+
+(X_U7.7)    -.0032 (X_U7.8)   28.2500 (X_U7.9)  -28.2500 (X_U8.3)   -4.0005     
+
+(X_U8.4)   -4.0005 (X_U8.5)   -3.2617 (X_U8.6)   -4.7394 (X_U8.7)    -.3630     
+
+(X_U8.8)   28.2500 (X_U8.9)  -28.2500 (X_U9.3)   -4.0005 (X_U9.4)   -4.0004     
+
+(X_U9.5)   -3.2616 (X_U9.6)   -4.7394 (X_U9.7)    -.3625 (X_U9.8)   28.2500     
+
+(X_U9.9)  -28.2500 (N111436)    0.0000                   (X_U4.10)    -.0040    
+
+(X_U4.11)    -.6940                   (X_U4.12)     .6860                       
+
+(X_U4.13)    -.0040                   (X_U4.14)    -.0032                       
+
+(X_U4.15)    -.0032                   (X_U4.19)    0.0000                       
+
+(X_U4.20)-52.06E-09                   (X_U4.21)     .4000                       
+
+(X_U4.22)    0.0000                   (X_U4.23)-66.52E-06                       
+
+(X_U4.24)     .5850                   (X_U4.26)    0.0000                       
+
+(X_U4.27)    0.0000                   (X_U4.30)    -.0396                       
+
+(X_U4.40)     .5684                   (X_U4.90)   30.0000                       
+
+(X_U4.91)  -30.0000                   (X_U4.98)    0.0000                       
+
+(X_U6.10)    8.1891                   (X_U6.11)    7.4991                       
+
+(X_U6.12)    8.8791                   (X_U6.13)    8.1891                       
+
+(X_U6.14)    8.1894                   (X_U6.15)    8.1894                       
+
+(X_U6.19)    0.0000                   (X_U6.20)-52.06E-09                       
+
+(X_U6.21)     .4000                   (X_U6.22)    0.0000                       
+
+(X_U6.23)-66.52E-06                   (X_U6.24)     .5850                       
+
+(X_U6.26)    0.0000                   (X_U6.27)    0.0000                       
+
+(X_U6.30)-216.0E-06                   (X_U6.40)     .5488                       
+
+(X_U6.90)   30.0000                   (X_U6.91)  -30.0000                       
+
+(X_U6.98)    0.0000                   (X_U7.10)    -.0040                       
+
+(X_U7.11)    -.6940                   (X_U7.12)     .6860                       
+
+(X_U7.13)    -.0040                   (X_U7.14)    -.0032                       
+
+(X_U7.15)    -.0032                   (X_U7.19)    0.0000                       
+
+(X_U7.20)-52.06E-09                   (X_U7.21)     .4000                       
+
+(X_U7.22)    0.0000                   (X_U7.23)-66.52E-06                       
+
+(X_U7.24)     .5850                   (X_U7.26)    0.0000                       
+
+(X_U7.27)    0.0000                   (X_U7.30)    -.0396                       
+
+(X_U7.40)     .5684                   (X_U7.90)   30.0000                       
+
+(X_U7.91)  -30.0000                   (X_U7.98)    0.0000                       
+
+(X_U8.10)    -.3639                   (X_U8.11)   -1.0539                       
+
+(X_U8.12)     .3261                   (X_U8.13)    -.3638                       
+
+(X_U8.14)    -.3630                   (X_U8.15)    -.3630                       
+
+(X_U8.19)    0.0000                   (X_U8.20)-52.06E-09                       
+
+(X_U8.21)     .4000                   (X_U8.22)    0.0000                       
+
+(X_U8.23)-66.52E-06                   (X_U8.24)     .5850                       
+
+(X_U8.26)    0.0000                   (X_U8.27)    0.0000                       
+
+(X_U8.30)   -4.0010                   (X_U8.40)     .5691                       
+
+(X_U8.90)   30.0000                   (X_U8.91)  -30.0000                       
+
+(X_U8.98)    0.0000                   (X_U9.10)    -.3633                       
+
+(X_U9.11)   -1.0533                   (X_U9.12)     .3267                       
+
+(X_U9.13)    -.3633                   (X_U9.14)    -.3625                       
+
+(X_U9.15)    -.3625                   (X_U9.19)    0.0000                       
+
+(X_U9.20)-52.06E-09                   (X_U9.21)     .4000                       
+
+(X_U9.22)    0.0000                   (X_U9.23)-66.52E-06                       
+
+(X_U9.24)     .5850                   (X_U9.26)    0.0000                       
+
+(X_U9.27)    0.0000                   (X_U9.30)   -4.0010                       
+
+(X_U9.40)     .5689                   (X_U9.90)   30.0000                       
+
+(X_U9.91)  -30.0000                   (X_U9.98)    0.0000                       
+
+(VCC_ARROW)   30.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V4        -7.037E-02
+    V_V5         7.019E-02
+    V_V6         9.996E-07
+    V_V7         0.000E+00
+    X_U4.v1     -1.088E-08
+    X_U4.vcl1    2.826E-11
+    X_U4.vcl2    2.826E-11
+    X_U4.vnoise1   5.206E-08
+    X_U4.vnoise2  -5.206E-08
+    X_U4.vnoise3   6.652E-05
+    X_U4.vnoise4  -6.652E-05
+    X_U4.vcur1   3.507E-05
+    X_U4.vcur2  -5.784E-13
+    X_U4.vo1     1.351E-05
+    X_U4.vo2    -1.351E-05
+    X_U4.voc     3.507E-05
+    X_U4.vcl3    3.859E-03
+    X_U4.vcl4    3.851E-03
+    X_U6.v1      2.824E-05
+    X_U6.vcl1    2.007E-11
+    X_U6.vcl2    3.645E-11
+    X_U6.vnoise1   5.206E-08
+    X_U6.vnoise2  -5.206E-08
+    X_U6.vnoise3   6.652E-05
+    X_U6.vnoise4  -6.652E-05
+    X_U6.vcur1   1.638E-05
+    X_U6.vcur2  -5.588E-13
+    X_U6.vo1     6.309E-06
+    X_U6.vo2    -6.309E-06
+    X_U6.voc     1.638E-05
+    X_U6.vcl3    3.857E-03
+    X_U6.vcl4    3.853E-03
+    X_U7.v1     -1.091E-08
+    X_U7.vcl1    2.826E-11
+    X_U7.vcl2    2.826E-11
+    X_U7.vnoise1   5.206E-08
+    X_U7.vnoise2  -5.206E-08
+    X_U7.vnoise3   6.652E-05
+    X_U7.vnoise4  -6.652E-05
+    X_U7.vcur1   3.507E-05
+    X_U7.vcur2  -5.784E-13
+    X_U7.vo1     1.351E-05
+    X_U7.vo2    -1.351E-05
+    X_U7.voc     3.507E-05
+    X_U7.vcl3    3.859E-03
+    X_U7.vcl4    3.851E-03
+    X_U8.v1     -1.252E-06
+    X_U8.vcl1    2.862E-11
+    X_U8.vcl2    2.790E-11
+    X_U8.vnoise1   5.206E-08
+    X_U8.vnoise2  -5.206E-08
+    X_U8.vnoise3   6.652E-05
+    X_U8.vnoise4  -6.652E-05
+    X_U8.vcur1   3.601E-05
+    X_U8.vcur2  -5.791E-13
+    X_U8.vo1     1.387E-05
+    X_U8.vo2    -1.387E-05
+    X_U8.voc     3.601E-05
+    X_U8.vcl3    3.859E-03
+    X_U8.vcl4    3.851E-03
+    X_U9.v1     -1.250E-06
+    X_U9.vcl1    2.862E-11
+    X_U9.vcl2    2.790E-11
+    X_U9.vnoise1   5.206E-08
+    X_U9.vnoise2  -5.206E-08
+    X_U9.vnoise3   6.652E-05
+    X_U9.vnoise4  -6.652E-05
+    X_U9.vcur1   3.565E-05
+    X_U9.vcur2  -5.789E-13
+    X_U9.vo1     1.373E-05
+    X_U9.vo2    -1.373E-05
+    X_U9.voc     3.565E-05
+    X_U9.vcl3    3.859E-03
+    X_U9.vcl4    3.851E-03
+
+    TOTAL POWER DISSIPATION   4.24E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 01/22/25 17:06:29 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ C:\Users\A1201-admin\Documents\Exjobb\Orcad\Filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       98.83
+  Total job time (using Solver 1)   =         .70
+

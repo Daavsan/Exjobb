@@ -91,7 +91,10 @@
       (Path "Design Resources"
          "C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter test.dsn"
          "Design Cache")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources"
+         "C:\Users\A1201-admin\Documents\Exjobb\Orcad\filter test.dsn"
+         "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")

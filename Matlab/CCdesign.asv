@@ -1,0 +1,26 @@
+% Generate the reduced CCD
+reducedDesign = ccdesign(3, 'type', 'f', 'center', 3);
+
+% Display the design
+disp(reducedDesign);
+
+% Example mapping to real-world values:
+% Factor 1: Resistance [1 Ohm, 1 MOhm]
+% Factor 2: Voltage [1V, 32V]
+% Factor 3: Duty Cycle [0%, 100%]
+resistance = 10.^((reducedDesign(:,1)+1)/2 * (6 - 0) + 0); % Logarithmic mapping
+voltage = (reducedDesign(:,2)+1)/2 * (32 - 1) + 1; % Linear mapping
+dutyCycle = (reducedDesign(:,3)+1)/2 * 100; % Linear mapping
+
+% Combine into a table for clarity
+resultsTable = table(resistance, voltage, dutyCycle, ...
+    'VariableNames', {'Resistance_Ohm', 'Voltage_V', 'DutyCycle_Percent'});
+
+disp(resultsTable);
+
+
+% Example response data (replace with actual measurements)
+response = [0.85; 0.80; 0.88; 0.83; ...]; % Efficiency values
+
+% Add response to the design matrix
+data = [designMatrix, response];

@@ -1,6 +1,6 @@
 (ExpressProject "SummTest"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S (3842415DEV319) [2/13/2020]-[08/12/09]")
+  (SoftwareVersion "22.1 P001 (4063652)  [10/6/2022]-[11/19/24]")
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
     (Folder "Library"
@@ -36,9 +36,12 @@
   (Folder "Layout")
   (Folder "Outputs")
   (Folder "PSpice Resources"
-    (Folder "Model Libraries")
-    (Folder "Stimulus Files")
-    (Folder "Include Files")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
     (Folder "Simulation Profiles"
       (ActiveProfile ".\summtest-pspicefiles\schematic1\bias.sim")
       (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
@@ -68,5 +71,14 @@
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
   (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
-  (MPSSessionName "nitint")
-  (Folder "Logs"))
+  (MPSSessionName "davkwi-9")
+  (Folder "Logs")
+  (GlobalState
+    (FileView
+      (Path "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 875"))
+      (Tab 0))))

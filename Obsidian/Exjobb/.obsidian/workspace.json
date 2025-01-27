@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWM Generation.md",
+                "file": "Mosfet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PWM Generation"
+              "title": "Mosfet"
             }
           }
         ],
@@ -207,27 +207,27 @@
   },
   "active": "3fa0aa9f738c5525",
   "lastOpenFiles": [
+    "Links.md",
+    "Johan.md",
     "High pressision mesurments.md",
-    "SyncronusBuck.png",
     "Current generator deign.md",
+    "create a link.md",
+    "Components.md",
+    "Circuit PID.md",
+    "Berring Currents.md",
     "Amplifers.md",
+    "Ultra-High-Bandwidth_Power_Amplifiers_A_Technology_Overview_and_Future_Prospects.pdf",
+    "SyncronusBuck.png",
+    "switching mosfet  and gatedriver test.md",
+    "PWM Generation.md",
     "ADC and DAC.md",
     "Daglig rapport/Daglig rapport.md",
-    "Circuit PID.md",
-    "Johan.md",
-    "Components.md",
-    "switching mosfet  and gatedriver test.md",
-    "Berring Currents.md",
     "test here.md",
     "Mosfet.md",
-    "Links.md",
-    "PWM Generation.md",
     "Pasted image 20240923124735.png",
     "[[Amplifers.md",
-    "create a link.md",
     "Pasted image 20240916152506.png",
     "PWM Pulse.png",
-    "Ultra-High-Bandwidth_Power_Amplifiers_A_Technology_Overview_and_Future_Prospects.pdf",
     "Untitled",
     "().md",
     "Untitled.canvas",

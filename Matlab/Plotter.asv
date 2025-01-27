@@ -96,21 +96,41 @@ OscilloscopePlotter(DiffHighVgs, timeUnit,'rescale2factor',[rescalefactor,1], 'l
 legend('Vo','Vgs')
 
 figure;
-tiledlayout(3,1)
+titlelayout(2,1);
 nexttile;
-OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','tirangle');
-nexttile;
-OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','square');
-nexttile;
-OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','PWN Generator');
+OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','tirangle');
+hold on
+%nexttile;
+OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','square');
+%nexttile;
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','PWN Generator');
+legend('pre filter','trinagle','pre','square','pre','PWM Output')
+hold off
+
+nexttitle;
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','PWN Generator')
+hold on
+OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,0], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','tirangle');
+legend('pre','PWM Generator','Transistor Output','triang')
+
+hold off;
 
 
 
-figure
+figure;
 OscilloscopePlotter(Vdiff_probe_VS_Direct,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
+figure;
+OscilloscopePlotter(Vdiff_shunt,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
+figure;
+OscilloscopePlotter(vdiff_Vout,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
+
 
 
 % FilterFFT = 'prefilt-in-post-out-fft';

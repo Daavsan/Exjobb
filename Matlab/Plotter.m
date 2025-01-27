@@ -96,16 +96,30 @@ OscilloscopePlotter(DiffHighVgs, timeUnit,'rescale2factor',[rescalefactor,1], 'l
 legend('Vo','Vgs')
 
 figure;
-tiledlayout(3,1)
+tiledlayout(2,1);
 nexttile;
-OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','tirangle');
+OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','tirangle');
+hold on
+%nexttile;
+OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','square');
+hold on
+%nexttile;
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','PWN Generator');
+legend('pre filter','trinagle','pre','square','pre','PWM Output')
+hold off
+
 nexttile;
-OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','square');
-nexttile;
-OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale);
-legend('Pre filter','PWN Generator');
+OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','PWN Generator')
+hold on
+OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[rescalefactor,0], 'linethickness', linethickness, 'textscale', textscale);
+%legend('Pre filter','tirangle');
+legend('pre','PWM Generator','Transistor Output','triang')
+
+hold off;
 
 
 
