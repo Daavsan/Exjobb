@@ -96,10 +96,10 @@ function [Pcon, Pg, Psw, Pwaste, Pdeliver, efficiency] = power_loss_analysis(RDS
 
     % Plot Efficiency vs Current 
     figure;
-    loglog(Io, efficiency, 'LineWidth', linethickness);
+    loglog(Io, efficiency.*100, 'LineWidth', linethickness);
     title('Efficiency vs Current');
     xlabel('Current (A)');
-    ylabel('Efficiency');
+    ylabel('Efficiency %');
     %ylim([0.1, 1.1]);
     set(gca, 'FontSize', 10 * textscale);
     set(get(gca, 'XLabel'), 'FontSize', 10 * textscale);

@@ -96,7 +96,7 @@ OscilloscopePlotter(DiffHighVgs, timeUnit,'rescale2factor',[rescalefactor,1], 'l
 legend('Vo','Vgs')
 
 figure;
-titlelayout(2,1);
+tiledlayout(2,1);
 nexttile;
 OscilloscopePlotter(PWMtriang,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
 %legend('Pre filter','tirangle');
@@ -104,13 +104,14 @@ hold on
 %nexttile;
 OscilloscopePlotter(PWMSquare,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
 %legend('Pre filter','square');
+hold on
 %nexttile;
 OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
 %legend('Pre filter','PWN Generator');
 legend('pre filter','trinagle','pre','square','pre','PWM Output')
 hold off
 
-nexttitle;
+nexttile;
 OscilloscopePlotter(PWMpwm,timeUnit,'rescale2factor',[0,1], 'linethickness', linethickness, 'textscale', textscale);
 %legend('Pre filter','PWN Generator')
 hold on
@@ -137,3 +138,57 @@ OscilloscopePlotter(vdiff_Vout,timeUnit,'rescale2factor',[rescalefactor,1], 'lin
 % Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
 % Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
 % vdiff-Vout = 
+
+figure;
+
+temp=load('bodedata.mat');
+bodedata=temp.a;
+freq=bodedata(:,1).*1e3;
+ohm1=bodedata(:,2);
+ohm1e6=bodedata(:,3);
+ohm6R8=bodedata(:,4);
+
+V_ref = 2.5;       % Reference voltage for normalization (2.5 V_pp)
+
+% Normalize magnitude relative to 2.5 V
+ohm1_norm = ohm1 / V_ref; 
+ohm1e6_norm = ohm1e6 / V_ref;
+ohm6R8_norm = ohm6R8 / V_ref;
+
+% Convert normalized magnitude to decibels (20*log10)
+ohm1_db = 20 * log10(ohm1_norm);
+ohm1e6_db = 20 * log10(ohm1e6_norm);
+ohm6R8_db = 20 * log10(ohm6R8_norm);
+
+% Plot data
+loglog(freq, ohm1_db, 'LineWidth', linethickness);
+hold on;
+loglog(freq, ohm1e6_db, '--', 'LineWidth', linethickness);
+loglog(freq, ohm6R8_db, '-.', 'LineWidth', linethickness);
+
+xline(1e6, '--b', '1 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(10e6, '--b', '10 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(20e6, '--b', '20 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(50e6, '--b', '50 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+yline(-3, '--r', '-3dB', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+
+
+hold off
+
+grid on;
+
+xlabel("Hz");
+ylabel('Gain [dB]');
+set(gca, 'XScale', 'log', 'YScale', 'linear'); % Logarithmic x-axis, linear y-axis for dB
+set(gca, 'FontSize', 10 * textscale);
+set(get(gca, 'XLabel'), 'FontSize', 10 * textscale);
+set(get(gca, 'YLabel'), 'FontSize', 10 * textscale);
+
+legend({'1 \Omega', '6.8 \Omega', '1 M\Omega'}, 'Interpreter', 'latex', 'Location', 'best');
+
+
+% Add logarithmic grid
+ax = gca;
+ax.GridLineStyle = '--'; % Dashed grid lines
+ax.XMinorGrid = 'on'; % Minor grid on x-axis
+ax.YMinorGrid = 'on'; % Minor grid on y-axis

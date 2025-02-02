@@ -138,3 +138,62 @@ OscilloscopePlotter(vdiff_Vout,timeUnit,'rescale2factor',[rescalefactor,1], 'lin
 % Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
 % Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
 % vdiff-Vout = 
+
+figure;
+
+temp=load('bodedata.mat');
+bodedata=temp.a;
+freq=bodedata(:,1).*1e3;
+ohm1=bodedata(:,2);
+ohm1e6=bodedata(:,3);
+ohm6R8=bodedata(:,4);
+
+V_ref = 2.5;       % Reference voltage for normalization (2.5 V_pp)
+
+% Normalize magnitude relative to 2.5 V
+ohm1_norm = ohm1 / V_ref; 
+ohm1e6_norm = ohm1e6 / V_ref;
+ohm6R8_norm = ohm6R8 / V_ref;
+
+% Convert normalized magnitude to decibels (20*log10)
+ohm1_db = 20 * log10(ohm1_norm);
+ohm1e6_db = 20 * log10(ohm1e6_norm);
+ohm6R8_db = 20 * log10(ohm6R8_norm);
+
+% Plot data
+loglog(freq, ohm1_db, '-x', 'LineWidth', linethickness, 'MarkerSize', 10);
+hold on;
+loglog(freq, ohm1e6_db, '--x', 'LineWidth', linethickness, 'MarkerSize', 10);
+loglog(freq, ohm6R8_db, '-.x', 'LineWidth', linethickness, 'MarkerSize', 10);
+
+xline(1e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '1 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(10e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '10 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(20e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '20 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(50e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '50 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+yline(-3, '--r', 'LineWidth', linethickness, ...
+    'Label', '-3dB', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+
+
+hold off
+
+grid on;
+
+xlabel("Hz");
+ylabel('Gain [dB]');
+set(gca, 'XScale', 'log', 'YScale', 'linear'); % Logarithmic x-axis, linear y-axis for dB
+set(gca, 'FontSize', 10 * textscale);
+set(get(gca, 'XLabel'), 'FontSize', 10 * textscale);
+set(get(gca, 'YLabel'), 'FontSize', 10 * textscale);
+
+legend({'1 $\Omega$', '6.8 $\Omega$', '1 M$\Omega$'}, 'Interpreter', 'latex', 'Location', 'best');
+
+
+% Add logarithmic grid
+ax = gca;
+ax.GridLineStyle = '--'; % Dashed grid lines
+ax.XMinorGrid = 'on'; % Minor grid on x-axis
+ax.YMinorGrid = 'on'; % Minor grid on y-axis
