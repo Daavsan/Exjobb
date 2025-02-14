@@ -163,8 +163,9 @@ ohm6R8_db = 20 * log10(ohm6R8_norm);
 % Plot data
 loglog(freq, ohm1_db, '-x', 'LineWidth', linethickness, 'MarkerSize', 10);
 hold on;
-loglog(freq, ohm1e6_db, '--x', 'LineWidth', linethickness, 'MarkerSize', 10);
 loglog(freq, ohm6R8_db, '-.x', 'LineWidth', linethickness, 'MarkerSize', 10);
+loglog(freq, ohm1e6_db, '--x', 'LineWidth', linethickness, 'MarkerSize', 10);
+
 
 xline(1e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
     'Label', '1 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
