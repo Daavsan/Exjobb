@@ -25,11 +25,22 @@ FilterFFT = 'prefilt-in-post-out-fft';
 Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
 Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
 vdiff_Vout = 'vdiff-vout-fsw30M330ohm32v50%';
-
+vdiff_shunt_probe = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
+vdiff_probe_dir = 'vdiff-probe-direct-32v-30mhz50%';
+half_sin = 'halfsin-modulation-6.8ohm';
+t1 = 't1-pwm-20-08-100-2e5-32v-capchargetestcsv';
+t2 = 't1-pwm-20-08-1e4-2e6-3v-big-cap';
 
 linethickness = 2; % Line thickness option
 textscale = 2.3; % Text and legend scale option
 timeUnit = "ns";
+Attenuatorloss = 10^(-30/20);
+rescalefactor = 1 / Attenuatorloss;
+
+
+%%
+
+
 
 figure;
 tiledlayout(2, 1);
@@ -161,16 +172,22 @@ ohm1e6_db = 20 * log10(ohm1e6_norm);
 ohm6R8_db = 20 * log10(ohm6R8_norm);
 
 % Plot data
-loglog(freq, ohm1_db, 'LineWidth', linethickness);
+loglog(freq, ohm1_db, '-x', 'LineWidth', linethickness, 'MarkerSize', 10);
 hold on;
-loglog(freq, ohm1e6_db, '--', 'LineWidth', linethickness);
-loglog(freq, ohm6R8_db, '-.', 'LineWidth', linethickness);
+loglog(freq, ohm6R8_db, '-.x', 'LineWidth', linethickness, 'MarkerSize', 10);
+loglog(freq, ohm1e6_db, '--x', 'LineWidth', linethickness, 'MarkerSize', 10);
 
-xline(1e6, '--b', '1 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
-xline(10e6, '--b', '10 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
-xline(20e6, '--b', '20 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
-xline(50e6, '--b', '50 MHz', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
-yline(-3, '--r', '-3dB', 'LineWidth', linethickness, 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+
+xline(1e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '1 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(10e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '10 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(20e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '20 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+xline(50e6, '--', 'Color', [0.4940 0.1840 0.5560], 'LineWidth', linethickness, ...
+    'Label', '50 MHz', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
+yline(-3, '--r', 'LineWidth', linethickness, ...
+    'Label', '-3dB', 'LabelVerticalAlignment', 'middle', 'FontSize', 10 * textscale);
 
 
 hold off
@@ -184,7 +201,7 @@ set(gca, 'FontSize', 10 * textscale);
 set(get(gca, 'XLabel'), 'FontSize', 10 * textscale);
 set(get(gca, 'YLabel'), 'FontSize', 10 * textscale);
 
-legend({'1 \Omega', '6.8 \Omega', '1 M\Omega'}, 'Interpreter', 'latex', 'Location', 'best');
+legend({'1 $\Omega$', '6.8 $\Omega$', '1 M$\Omega$'}, 'Interpreter', 'latex', 'Location', 'best');
 
 
 % Add logarithmic grid
@@ -192,3 +209,48 @@ ax = gca;
 ax.GridLineStyle = '--'; % Dashed grid lines
 ax.XMinorGrid = 'on'; % Minor grid on x-axis
 ax.YMinorGrid = 'on'; % Minor grid on y-axis
+
+
+%%
+figure;
+OscilloscopePlotter(vdiff_shunt_probe, timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Vout','Vshunt')
+
+figure;
+OscilloscopePlotter(vdiff_probe_dir, timeUnit,'rescale2factor',[rescalefactor,rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Vout','Vshunt')
+
+
+figure;
+OscilloscopePlotter(half_sin, timeUnit,'rescale2factor',[3,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('PWM (not to scale)','Vout');
+
+figure;
+OscilloscopePlotter(t1, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('PWM (not to scale)','Vout');
+
+
+%%
+t2 = 't1-pwm-20-08-1e4-2e6-3v-big-cap';
+t3 = 't1-pwm-20-08-100-2e5-32v-capchargetestcsv';
+
+capt_charge = 'cap-voltage-drop';
+
+
+hold off;
+figure;
+OscilloscopePlotter(t2, timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Pre Filter','Post Filter');
+
+figure;
+OscilloscopePlotter(t3, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Pre Filter','Post Filter');
+
+%%
+
+capt_charge = 'cap-voltage-drop';
+figure;
+OscilloscopePlotter(capt_charge, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+%legend('Pre Filter');
+
+

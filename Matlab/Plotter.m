@@ -25,11 +25,22 @@ FilterFFT = 'prefilt-in-post-out-fft';
 Vdiff_probe_VS_Direct = 'vdiff-probe-direct-32v-30mhz50%';
 Vdiff_shunt = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
 vdiff_Vout = 'vdiff-vout-fsw30M330ohm32v50%';
-
+vdiff_shunt_probe = 'vdiff-shuntprobe(noisy)-32v-50%30Mhz';
+vdiff_probe_dir = 'vdiff-probe-direct-32v-30mhz50%';
+half_sin = 'halfsin-modulation-6.8ohm';
+t1 = 't1-pwm-20-08-100-2e5-32v-capchargetestcsv';
+t2 = 't1-pwm-20-08-1e4-2e6-3v-big-cap';
 
 linethickness = 2; % Line thickness option
 textscale = 2.3; % Text and legend scale option
 timeUnit = "ns";
+Attenuatorloss = 10^(-30/20);
+rescalefactor = 1 / Attenuatorloss;
+
+
+%%
+
+
 
 figure;
 tiledlayout(2, 1);
@@ -198,3 +209,62 @@ ax = gca;
 ax.GridLineStyle = '--'; % Dashed grid lines
 ax.XMinorGrid = 'on'; % Minor grid on x-axis
 ax.YMinorGrid = 'on'; % Minor grid on y-axis
+
+
+%%
+figure;
+OscilloscopePlotter(vdiff_shunt_probe, timeUnit,'rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Vout','Vshunt')
+
+figure;
+OscilloscopePlotter(vdiff_probe_dir, timeUnit,'rescale2factor',[rescalefactor,rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Vout','Vshunt')
+
+
+figure;
+OscilloscopePlotter(half_sin, timeUnit,'rescale2factor',[3,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('PWM (not to scale)','Vout');
+
+figure;
+OscilloscopePlotter(t1, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('PWM (not to scale)','Vout');
+
+
+%%
+t2 = 't1-pwm-20-08-1e4-2e6-3v-big-cap';
+t3 = 't1-pwm-20-08-100-2e5-32v-capchargetestcsv';
+
+
+
+figure;
+OscilloscopePlotter(t2, 'us','rescale2factor',[rescalefactor,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Pre Filter','Post Filter');
+
+figure;
+OscilloscopePlotter(t3, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Pre Filter','Post Filter');
+
+%%
+
+capt_charge = 'cap-voltage-drop';
+figure;
+OscilloscopePlotter(capt_charge, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+%legend('Pre Filter');
+
+%%
+t4= 'halfsin-modulation-1ohm';
+figure;
+OscilloscopePlotter(t4, timeUnit,'rescale2factor',[1,1], 'linethickness', linethickness, 'textscale', textscale)
+legend('Pre Filter','Post Filter');
+
+%%
+fpgapwm = 'fpga';
+
+figure;
+OscilloscopePlotter(fpgapwm, timeUnit,'rescale2factor',[1e-4], 'linethickness', linethickness, 'textscale', textscale)
+legend('FPGA');
+
+figure;
+halfsin = 'hlalfsin68';
+OscilloscopePlotter(halfsin, timeUnit,'rescale2factor',[1e-4,1e-4], 'linethickness', linethickness, 'textscale', textscale)
+legend('FPGA');

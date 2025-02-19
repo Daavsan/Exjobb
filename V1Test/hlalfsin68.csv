@@ -1,0 +1,80 @@
+CPgReferenceCurveAttributes:SourceType:Source:
+Resolution:2.5e-13:
+RecordLength:4000000:
+HWRecordLength:4000000:
+TriggerOffset:0:
+RescaleCenterTime:3.01463e-07:
+DecimationMode:Sample:
+TraceArithmetics:Off:
+TraceType:Normal:
+BaseUnit:V:
+BaseUnitRelative:Off:
+Impedance:50:
+XStart:-1.98537e-07:
+XStop:8.01463e-07:
+SignalRecordLength:4000000:
+HardwareXStart:-1.98537e-07:
+HardwareXStop:8.01463e-07:
+SignalHardwareRecordLength:4000000:
+AdjustedResolutionBW:0:
+NoiseBandwidth:0:
+InterleavedTraceCount:1:
+ValueType:Completely finite and defined:
+NofQuantisationLevels:64768:
+DecimationFactor:1:
+TOADone:On:
+ISO_TRG:0:
+SC_POST:0:
+SC_TRG:0:
+SignalResolution:2.5e-13:
+LeadingSettlingSamples:0:
+TimeScale:1e-07:
+ReferencePoint:19.8537:
+RescaleCenterPoint:50:
+VerticalPosition:0:
+VerticalScale:0.2:
+VerticalOffset:0.464:
+BaseYStart:-0.536:
+BaseYStop:1.464:
+ViewUnit:V:
+ViewUnitRelative:Off:
+ViewReferenceLevel:0:
+UseInterSampleTriggerOffset:Auto:
+Source:C1W1:
+NumericFormat:Decimal:
+EnhancementMode:Interpolated time:
+InterpolationMode:sin(x)/x:
+CenterFreq:0:
+FreqSpan:1000:
+ResolutionBW:1:
+FrequencyStart:0:
+FrequencyStop:0:
+WindowType:Rectangular:
+GateRBWCoupling:Record length controlled:
+HorizontalDivisionCount:10:
+VerticalDivisionCount:10:
+MultiChannelExport:On:
+MultiChannelVerticalOffset:4:0.464:0:0:0:
+MultiChannelVerticalPosition:4:0:0:0:0:
+MultiChannelVerticalScale:4:0.2:1.6:0:0:
+MultiChannelBaseYStart:4:-0.536:-8:0:0:
+MultiChannelBaseYStop:4:1.464:8:0:0:
+MultiChannelExportState:4:On:On:Off:Off:
+MultiChannelViewUnit:4:V:V:::
+MultiChannelInterleavedTraceCount:4:1:1:1:1:
+MultiChannelSource:4:C1W1:C2W1:None:None:
+FirmwareVersion:5.35.1.0:
+MaterialNumber:1802.0001k04:
+SerialNumber:111494:
+SignalFormat:INT (16 Bit):
+Origin:Waveform export:
+ByteOrder:LSB first:
+NumberOfAcquisitions:1:
+TimestampState:Off:
+Timestamp:11:19 12,272.532.274 s:
+XAxisMode:Linear:
+XAxisTDRDomain:time:
+tdelay:0:
+IncludesCDR:Off:
+AdvancedJitterHistogramBins:200:
+ReferenceCDRAttributes:
